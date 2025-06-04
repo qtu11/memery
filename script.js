@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("section");
 
+  // Hiển thị section #home mặc định
+  document.getElementById("home").classList.add("active");
+
   // Xử lý nút menu
   menuToggle.addEventListener("click", () => {
     navMenu.classList.toggle("active");
@@ -48,14 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Điều hướng
+  console.log("Sections found:", sections.length);
   navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const targetId = link.getAttribute("href").substring(1);
+      console.log("Navigating to:", targetId);
       sections.forEach(section => {
         section.classList.remove("active");
         if (section.id === targetId) {
           section.classList.add("active");
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+          console.log("Activated section:", section.id);
         }
       });
       navMenu.classList.remove("active");
@@ -73,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const newMessage = { name, message, timestamp: new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }) };
       try {
         await database.ref('messages').push(newMessage);
-        displayMessages();
         nameInput.value = "";
         messageInput.value = "";
       } catch (error) {
@@ -85,27 +91,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Hiển thị tâm thư
-  async function displayMessages() {
+  // Hiển thị tâm thư theo thời gian thực
+  function displayMessages() {
     const submittedMessages = document.getElementById("submitted-messages");
-    submittedMessages.innerHTML = "";
-    try {
-      const snapshot = await database.ref('messages').once('value');
-      const messages = snapshot.val();
-      if (messages) {
-        Object.values(messages).forEach(msg => {
-          const messageDiv = document.createElement("div");
-          messageDiv.classList.add("message-card");
-          messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
-          submittedMessages.appendChild(messageDiv);
-        });
-      }
-    } catch (error) {
+    database.ref('messages').on('child_added', (snapshot) => {
+      const msg = snapshot.val();
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message-card");
+      messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
+      submittedMessages.appendChild(messageDiv);
+    }, (error) => {
       console.error("Lỗi khi lấy tin nhắn:", error);
-    }
+    });
   }
 
-  // Hiển thị tâm thư khi tải trang
+  // Gọi hàm hiển thị tâm thư
   displayMessages();
 
   // Hiển thị lời nhắn trong modal
@@ -165,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(createParticle, particleInterval);
 });
 
-// Hàm bật nhạc nền thủ công
 function playBackgroundMusic() {
   const audio = document.getElementById("background-music");
   audio.play().catch(error => {
