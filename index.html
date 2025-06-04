@@ -1096,21 +1096,31 @@
     <div class="message-card" onclick="showMessage('Phạm Hải Yến', 'Không ai là bạn tốt với bạn hơn chính bạn.')">Phạm Hải Yến</div>
   </section>
 
+   <!-- Section: Viết tâm thư -->
   <section id="write-message">
-    <h2>Viết tâm thư</h2>
-    <div class="write-message-form">
-      <input type="text" id="name" placeholder="Tên của bạn" required>
-      <textarea id="message" placeholder="Lời nhắn nhủ" required></textarea>
-      <button type="button" onclick="submitMessage()">Gửi</button>
+    <div class="container">
+      <h2>Viết tâm thư</h2>
+      <form onsubmit="event.preventDefault(); submitMessage();">
+        <div class="form-group">
+          <label for="name">Tên của bạn:</label>
+          <input type="text" id="name" placeholder="Nhập tên của bạn" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Lời nhắn:</label>
+          <textarea id="message" placeholder="Nhập lời nhắn của bạn" required></textarea>
+        </div>
+        <button type="submit">Gửi tâm thư</button>
+      </form>
+      <div id="write-message-submitted"></div> <!-- Khu vực hiển thị tin nhắn -->
     </div>
-    <div id="submitted-messages"></div>
   </section>
 
-  <div class="modal" id="message-modal">
+  <!-- Modal: Hiển thị lời nhắn -->
+  <div id="message-modal" class="modal">
     <div class="modal-content">
-      <h3 id="modal-name">Tên thành viên</h3>
-      <p id="modal-message">Nội dung lời nhắn mẫu</p>
-      <button type="button" onclick="closeModal()">Đóng</button>
+      <span class="close" onclick="closeModal()">×</span>
+      <h3>Lời nhắn từ <span id="modal-name"></span></h3>
+      <p id="modal-message"></p>
     </div>
   </div>
 
