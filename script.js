@@ -1,12 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Khởi tạo Firebase
+  let database;
+  try {
+    const firebaseConfig = {
+      apiKey: "AIzaSyDGl114VDUnvUtVdl7vNd35lHEgXQIdaKs",
+      authDomain: "tuquangmemmery.firebaseapp.com",
+      projectId: "tuquangmemmery",
+      storageBucket: "tuquangmemmery.firebasestorage.app",
+      messagingSenderId: "280703846268",
+      appId: "1:280703846268:web:d4fc49d0750dcea82a46f9",
+      measurementId: "G-W04JHPDT9Z"
+    };
+    firebase.initializeApp(firebaseConfig);
+    database = firebase.database();
+    console.log("Firebase khởi tạo thành công"); // Debug
+  } catch (error) {
+    console.error("Lỗi khi khởi tạo Firebase:", error);
+  }
+
   // Các phần tử DOM
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("section");
   const audio = document.getElementById("background-music");
-  const messageForm = document.getElementById("message-form");
-  const writeMessageSubmitted = document.getElementById("write-message-submitted");
 
   // Hiển thị section #home mặc định
   if (sections.length > 0) {
@@ -19,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.toggle("active");
     });
 
+    // Ẩn menu khi nhấp ra ngoài
     document.addEventListener("click", (e) => {
       if (!navMenu.contains(e.target) && e.target !== menuToggle) {
         navMenu.classList.remove("active");
@@ -31,14 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const targetId = link.getAttribute("href").substring(1);
-      console.log("Navigating to:", targetId);
+      console.log("Navigating to:", targetId); // Debug
 
       sections.forEach(section => {
         section.classList.remove("active");
         if (section.id === targetId) {
           section.classList.add("active");
           section.scrollIntoView({ behavior: "smooth", block: "start" });
-          console.log("Activated section:", section.id);
+          console.log("Activated section:", section.id); // Debug
         }
       });
 
@@ -67,66 +85,90 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Gửi tin nhắn
-  if (messageForm && writeMessageSubmitted) {
-    messageForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
+  // Gửi tâm thư
+  window.submitMessage = async function() {
+    console.log("submitMessage được gọi"); // Debug
+    if (!database) {
+      console.log("Database không được khởi tạo"); // Debug
+      alert("Không thể gửi tin nhắn do lỗi kết nối Firebase!");
+      return;
+    }
 
-      const nameInput = document.getElementById("name");
-      const messageInput = document.getElementById("message");
-      const name = nameInput.value.trim();
-      const message = messageInput.value.trim();
+    const nameInput = document.getElementById("name");
+    const messageInput = document.getElementById("message");
+    const name = nameInput.value.trim();
+    const message = messageInput.value.trim();
+    console.log("Name:", name, "Message:", message); // Debug
 
-      if (!name || !message) {
-        alert("Vui lòng nhập đầy đủ tên và lời nhắn!");
-        return;
-      }
-
+    if (name && message) {
+      const newMessage = {
+        name,
+        message,
+        timestamp: new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" })
+      };
+      console.log("New message:", newMessage); // Debug
       try {
-        const response = await fetch('/api/messages', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ name, message }),
-        });
-
-        const result = await response.json();
-        if (result.success) {
-          nameInput.value = "";
-          messageInput.value = "";
-          loadMessages(); // Tải lại danh sách tin nhắn
-        } else {
-          alert("Gửi tin nhắn thất bại!");
-        }
+        await database.ref('messages').push(newMessage);
+        console.log("Tin nhắn đã gửi thành công"); // Debug
+        nameInput.value = "";
+        messageInput.value = "";
       } catch (error) {
         console.error("Lỗi khi gửi tin nhắn:", error);
         alert("Không thể gửi tin nhắn do lỗi kết nối!");
       }
+    } else {
+      console.log("Input không hợp lệ"); // Debug
+      alert("Vui lòng nhập đầy đủ tên và lời nhắn!");
+    }
+  };
+
+  // Hiển thị tâm thư trong section #messages
+  function displayMessages() {
+    if (!database) {
+      console.error("Không thể hiển thị tin nhắn do lỗi kết nối Firebase!");
+      return;
+    }
+
+    const submittedMessages = document.getElementById("submitted-messages");
+    if (!submittedMessages) return;
+
+    database.ref('messages').on('child_added', (snapshot) => {
+      const msg = snapshot.val();
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message-card");
+      messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
+      messageDiv.addEventListener("click", () => showMessage(msg.name, msg.message));
+      submittedMessages.appendChild(messageDiv);
+    }, (error) => {
+      console.error("Lỗi khi lấy tin nhắn:", error);
     });
   }
 
-  // Hiển thị tin nhắn
-  function loadMessages() {
-    if (writeMessageSubmitted) {
-      fetch('/api/messages')
-        .then(response => response.json())
-        .then(messages => {
-          writeMessageSubmitted.innerHTML = ''; // Xóa nội dung cũ
-          messages.forEach(msg => {
-            const messageDiv = document.createElement("div");
-            messageDiv.classList.add("message-card");
-            messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
-            messageDiv.addEventListener("click", () => showMessage(msg.name, msg.message));
-            writeMessageSubmitted.appendChild(messageDiv);
-          });
-        })
-        .catch(error => console.error("Lỗi khi tải tin nhắn:", error));
+  // Hiển thị tâm thư trong section #write-message
+  function displayMessagesInWriteSection() {
+    if (!database) {
+      console.error("Không thể hiển thị tin nhắn do lỗi kết nối Firebase!");
+      return;
     }
+
+    const writeMessageSubmitted = document.getElementById("write-message-submitted");
+    if (!writeMessageSubmitted) return;
+
+    database.ref('messages').on('child_added', (snapshot) => {
+      const msg = snapshot.val();
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message-card");
+      messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
+      messageDiv.addEventListener("click", () => showMessage(msg.name, msg.message));
+      writeMessageSubmitted.appendChild(messageDiv);
+    }, (error) => {
+      console.error("Lỗi khi lấy tin nhắn trong section viết tâm thư:", error);
+    });
   }
 
-  // Gọi hàm hiển thị tin nhắn khi trang tải
-  loadMessages();
+  // Gọi cả hai hàm hiển thị tâm thư
+  displayMessages();
+  displayMessagesInWriteSection();
 
   // Hiển thị lời nhắn trong modal
   window.showMessage = function(name, message) {
