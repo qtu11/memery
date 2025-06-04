@@ -1,6 +1,9 @@
 {
   "rules": {
-    ".read": true,
-    ".write": true
+    "messages": {
+      ".read": true,
+      ".write": true,
+      ".indexOn": ["timestamp"]
+    }
   }
 }
