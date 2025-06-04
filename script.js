@@ -2,15 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Khởi tạo Firebase
   let database;
   try {
-    const firebaseConfig = {
-      apiKey: "AIzaSyDGl114VDUnvUtVdl7vNd35lHEgXQIdaKs",
-      authDomain: "tuquangmemmery.firebaseapp.com",
-      projectId: "tuquangmemmery",
-      storageBucket: "tuquangmemmery.firebasestorage.app",
-      messagingSenderId: "280703846268",
-      appId: "1:280703846268:web:d4fc49d0750dcea82a46f9",
-      measurementId: "G-W04JHPDT9Z"
-    };
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDGl114VDUnvUtVdl7vNd35lHEgXQIdaKs",
+  authDomain: "tuquangmemmery.firebaseapp.com",
+  projectId: "tuquangmemmery",
+  storageBucket: "tuquangmemmery.firebasestorage.app",
+  messagingSenderId: "280703846268",
+  appId: "1:280703846268:web:d4fc49d0750dcea82a46f9",
+  measurementId: "G-W04JHPDT9Z"
+};
     firebase.initializeApp(firebaseConfig);
     database = firebase.database();
     console.log("Firebase khởi tạo thành công"); // Debug
