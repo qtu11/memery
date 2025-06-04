@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Gửi tâm thư
-  window.submitMessage = function() {
+  window.submitMessage = async function() {
     const nameInput = document.getElementById("name");
     const messageInput = document.getElementById("message");
     const name = nameInput.value.trim();
@@ -47,28 +47,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (name && message) {
       const newMessage = { name, message, timestamp: new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }) };
-      let messages = JSON.parse(localStorage.getItem("messages") || "[]");
-      messages.push(newMessage);
-      localStorage.setItem("messages", JSON.stringify(messages));
-      displayMessages();
-      nameInput.value = "";
-      messageInput.value = "";
+      try {
+        // Gửi dữ liệu lên server
+        const response = await fetch('/api/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newMessage)
+        });
+        if (response.ok) {
+          displayMessages(); // Làm mới danh sách tin nhắn
+          nameInput.value = "";
+          messageInput.value = "";
+        } else {
+          alert("Có lỗi xảy ra khi gửi tin nhắn!");
+        }
+      } catch (error) {
+        console.error("Lỗi khi gửi tin nhắn:", error);
+        alert("Không thể kết nối đến server!");
+      }
     } else {
       alert("Vui lòng nhập đầy đủ tên và lời nhắn!");
     }
   };
 
   // Hiển thị tâm thư
-  function displayMessages() {
+  async function displayMessages() {
     const submittedMessages = document.getElementById("submitted-messages");
     submittedMessages.innerHTML = "";
-    let messages = JSON.parse(localStorage.getItem("messages") || "[]");
-    messages.forEach(msg => {
-      const messageDiv = document.createElement("div");
-      messageDiv.classList.add("message-card");
-      messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
-      submittedMessages.appendChild(messageDiv);
-    });
+    try {
+      // Lấy dữ liệu từ server
+      const response = await fetch('/api/messages');
+      if (response.ok) {
+        const messages = await response.json();
+        messages.forEach(msg => {
+          const messageDiv = document.createElement("div");
+          messageDiv.classList.add("message-card");
+          messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
+          submittedMessages.appendChild(messageDiv);
+        });
+      } else {
+        console.error("Lỗi khi lấy tin nhắn:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Lỗi khi lấy tin nhắn:", error);
+    }
   }
 
   // Hiển thị tâm thư khi tải trang
