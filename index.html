@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kỉ niệm 12A9</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Nút menu và thanh điều hướng -->
+  <nav>
+    <button class="menu-toggle" type="button" aria-label="Mở menu điều hướng"><i class="fas fa-bars" aria-hidden="true"></i><span class="sr-only">Mở menu</span></button>
+    <ul class="nav-menu">
+      <li><a href="#home" class="nav-link">Trang chủ</a></li>
+      <li><a href="#gallery" class="nav-link">Thư viện ảnh/video</a></li>
+      <li><a href="#messages" class="nav-link">Lời nhắn</a></li>
+      <li><a href="#write-message" class="nav-link">Viết tâm thư</a></li>
+    </ul>
+  </nav>
+
+  <!-- Nhạc nền -->
+  <audio id="background-music" loop>
+    <source src="audio/nhac_nen_tinh_ban_dieu_ky.mp3" type="audio/mp3">
+    <source src="audio/nhac_nen_tinh_ban_dieu_ky.ogg" type="audio/ogg">
+    Trình duyệt của bạn không hỗ trợ phát âm thanh.
+  </audio>
+  <button type="button" onclick="playBackgroundMusic()" aria-label="Phát nhạc nền"><span aria-hidden="true">♫</span><span class="sr-only">Phát nhạc nền</span></button>
+
+  <div id="particles"></div>
+
+  <section id="home" class="active">
+    <h1>Yêu mãi ngàn năm</h1>
+    <div id="members">
+      <div>Đồng Xuân An</div>
+      <div>Nguyễn Ngọc Mai Anh</div>
+      <div>Lưu Trần Gia Bảo</div>
+      <div>Ngô Phan Thái Bình</div>
+      <div>Đào Thị Huyền Diệu</div>
+      <div>Nguyễn Thị Xuân Diệu</div>
+      <div>Bùi Chí Dũng</div>
+      <div>Nguyễn Trần Khánh Duy</div>
+      <div>Lê Anh Đào</div>
+      <div>Hoàng Thị Thúy Hằng</div>
+      <div>Hoàng Gia Hân</div>
+      <div>Phùng Gia Hân</div>
+      <div>Trần Gia Huy</div>
+      <div>Nguyễn Thị Thanh Huyền</div>
+      <div>Trần Thị Ngọc Huyền</div>
+      <div>Trần Thị Thu Hường</div>
+      <div>Nguyễn Hữu Khánh</div>
+      <div>Phùng Gia Khánh</div>
+      <div>Nguyễn Thị Phương Mai</div>
+      <div>Phạm Ngọc Trúc My</div>
+      <div>Trần Khánh Ngọc</div>
+      <div>Trương Phạm Kim Nhàn</div>
+      <div>Ngô Thanh Nhân</div>
+      <div>Huỳnh Long Nhật</div>
+      <div>Dương Ngọc Nhi</div>
+      <div>Lê Ngọc Thảo Như</div>
+      <div>Nguyễn Phạm Quỳnh Như</div>
+      <div>Vương Quý Phi</div>
+      <div>Đặng Phương Quỳnh</div>
+      <div>Huỳnh Phát Tài</div>
+      <div>Hoàng Phạm Duy Tân</div>
+      <div>Trịnh Thị Kim Thanh</div>
+      <div>Bùi Phương Thảo</div>
+      <div>Nguyễn Võ Hồng Thi</div>
+      <div>Lê Ngọc Quỳnh Thư</div>
+      <div>Nguyễn Hà Minh Thư</div>
+      <div>Nguyễn Thị Anh Thư</div>
+      <div>Nguyễn Song Bích Thy</div>
+      <div>Phạm Thanh Tuyết Thy</div>
+      <div>Tạ Thủy Tiên</div>
+      <div>Đỗ Văn Đức Tình</div>
+      <div>Lê Ngọc Yến Trang</div>
+      <div>Nguyễn Ngọc Quỳnh Trâm</div>
+      <div>Lâm Huyền Trân</div>
+      <div>Nguyễn Quang Tú</div>
+      <div>Nguyễn Quang Tuấn</div>
+      <div>Nguyễn Thùy Minh Tuệ</div>
+      <div>Nguyễn Văn Tùng</div>
+      <div>Trần Chí Tùng</div>
+      <div>Trần Lê Khánh Vân</div>
+      <div>Trần Thị Hải Vy</div>
+      <div>Phạm Hải Yến</div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section gallery-section">
+    <div class="content">
+      <h2>Thư viện ảnh/video</h2>
+      <!-- Phần video với grid -->
+      <h3>Video kỷ niệm</h3>
+      <div class="video-grid">
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865601/f9yvnunsqh23bn5tnequ.mp4', 'Diễn như thật', 'Khoảnh khắc vui vẻ.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865601/f9yvnunsqh23bn5tnequ.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 1</h3>
+            <p>Khoảnh khắc vui vẻ.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865595/ikhjprhdqwc5rwrgdalk.mp4', 'Ngủ quên trời quên đất', 'Đi học là 1 niềm vui.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865595/ikhjprhdqwc5rwrgdalk.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 2</h3>
+            <p>Đi học là 1 niềm vui.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865600/kp6dmjunhzbnbgwm6o9n.mp4', 'sn thầy hậu', 'Khoảng khác đáng nhớnhớ.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865600/kp6dmjunhzbnbgwm6o9n.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 3</h3>
+            <p>Sn thầy hậu nene.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865598/svlkmn6bzhobsaywngma.mp4', 'Kịch nô hài', 'Diễn kịch mà dỡn.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865598/svlkmn6bzhobsaywngma.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 4</h3>
+            <p>Diễn kịch chân thật hong.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865600/la3j1q1nnrrwhrqvehwm.mp4', 'Video 5', 'Giây phút chia tay xúc động.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865600/la3j1q1nnrrwhrqvehwm.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 5</h3>
+            <p>Giây phút chia tay xúc động.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865600/e8yyjraej5r3vn7ffgel.mp4', 'Video 6', 'Hội trại sôi động.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865600/e8yyjraej5r3vn7ffgel.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 6</h3>
+            <p>Hội trại sôi động.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865606/h0qkwpio9yufty4kault.mp4', 'Video 7', 'Ngày đầu tiên nhập học.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865606/h0qkwpio9yufty4kault.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 7</h3>
+            <p>Ngày đầu tiên nhập học.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865613/zloymmih5sls5fp5amjc.mp4', 'Video 8', 'Buổi học nhóm thú vị.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865613/zloymmih5sls5fp5amjc.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 8</h3>
+            <p>Buổi học nhóm thú vị.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865646/u3nwsy8nqwxmhvbgtnr6.mp4', 'Video 9', 'Chụp ảnh tập thể lớp.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865646/u3nwsy8nqwxmhvbgtnr6.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 9</h3>
+            <p>Chụp ảnh tập thể lớp.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865613/bl1dgm9ewh7nvih6tzxu.mp4', 'Video 10', 'Tham gia hoạt động ngoại khóa.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865613/bl1dgm9ewh7nvih6tzxu.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 10</h3>
+            <p>Tham gia hoạt động ngoại khóa.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865611/wrhgyndbamow2fhrhzzz.mp4', 'Video 11', 'Buổi sinh hoạt lớp vui vẻ.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865611/wrhgyndbamow2fhrhzzz.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 11</h3>
+            <p>Buổi sinh hoạt lớp vui vẻ.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865609/qofwzvfrcef41ncqlq5m.mp4', 'Video 12', 'Hội hè cùng bạn bè.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865609/qofwzvfrcef41ncqlq5m.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 12</h3>
+            <p>Hội hè cùng bạn bè.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865626/gh4e7lqb8u8gpfirljbs.mp4', 'Video 13', 'Chuyến đi từ thiện ý nghĩa.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865626/gh4e7lqb8u8gpfirljbs.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 13</h3>
+            <p>Chuyến đi từ thiện ý nghĩa.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865614/ysq3a6yma3lnvvtcmrw8.mp4', 'Video 14', 'Ngày hội khoa học sáng tạo.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865614/ysq3a6yma3lnvvtcmrw8.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 14</h3>
+            <p>Ngày hội khoa học sáng tạo.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748873816/video15_png9jq.mp4', 'Video 15', 'Lễ kỷ niệm thành lập trường.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748873816/video15_png9jq.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 15</h3>
+            <p>Lễ kỷ niệm thành lập trường.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865640/svbvkcthi2vhskavvvms.mp4', 'Video 16', 'Buổi học ngoại khóa thú vị.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865640/svbvkcthi2vhskavvvms.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 16</h3>
+            <p>Buổi học ngoại khóa thú vị.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865619/xzawnrj6n8fkramqpltr.mp4', 'Video 17', 'Tham gia giải bóng đá lớp.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865619/xzawnrj6n8fkramqpltr.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 17</h3>
+            <p>Tham gia giải bóng đá lớp.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748873863/video18_ufpmbe.mp4', 'Video 18', 'Ngày hội truyền thống trường.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748873863/video18_ufpmbe.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 18</h3>
+            <p>Ngày hội truyền thống trường.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748873660/6637499264489_bdrk06.mp4', 'Video 19', 'Chuyến đi thực tế tại bảo tàng.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748873660/6637499264489_bdrk06.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 19</h3>
+            <p>Chuyến đi thực tế tại bảo tàng.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865560/xnonqmijeobjccim64yz.mp4', 'Video 20', 'Buổi tiệc cuối năm ấm áp.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865560/xnonqmijeobjccim64yz.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 20</h3>
+            <p>Buổi tiệc cuối năm ấm áp.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865553/r5hv5g1vlum6wjhukw3r.mp4', 'Video 21', 'Ngày hội thể thao toàn trường.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865553/r5hv5g1vlum6wjhukw3r.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 21</h3>
+            <p>Ngày hội thể thao toàn trường.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865551/ugeqnwkg5iljdxppzxep.mp4', 'Video 22', 'Buổi học nhóm ngoài trời.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865551/ugeqnwkg5iljdxppzxep.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 22</h3>
+            <p>Buổi học nhóm ngoài trời.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865573/a8bb69rzzhgvifnftkcv.mp4', 'Video 23', 'Tham gia hội thi nấu ăn.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865573/a8bb69rzzhgvifnftkcv.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 23</h3>
+            <p>Tham gia hội thi nấu ăn.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865561/vkfb7bozemxyiferdwke.mp4', 'Video 24', 'Ngày hội môi trường xanh.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865561/vkfb7bozemxyiferdwke.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 24</h3>
+            <p>Ngày hội môi trường xanh.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865559/eahtxvehe0uqgtvdqohj.mp4', 'Video 25', 'Buổi họp lớp đầy cảm xúc.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865559/eahtxvehe0uqgtvdqohj.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 25</h3>
+            <p>Buổi họp lớp đầy cảm xúc.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865571/jbxdwa0siwdownjtbrqq.mp4', 'Video 26', 'Chuyến đi picnic vui vẻ.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865571/jbxdwa0siwdownjtbrqq.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 26</h3>
+            <p>Chuyến đi picnic vui vẻ.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865642/tw89lf06hl1pit0agw4w.mp4', 'Video 27', 'Ngày hội sách và tri thức.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865642/tw89lf06hl1pit0agw4w.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 27</h3>
+            <p>Ngày hội sách và tri thức.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865568/nathj9tfcpzslfwzearu.mp4', 'Video 28', 'Tham gia hoạt động tình nguyện.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865568/nathj9tfcpzslfwzearu.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 28</h3>
+            <p>Tham gia hoạt động tình nguyện.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865564/tywf871wy32jx32fyhnd.mp4', 'Video 29', 'Buổi học kỹ năng sống.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865564/tywf871wy32jx32fyhnd.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 29</h3>
+            <p>Buổi học kỹ năng sống.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865575/khbknesjbxidmpoilihe.mp4', 'Video 30', 'Ngày hội nghề nghiệp tương lai.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865575/khbknesjbxidmpoilihe.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 30</h3>
+            <p>Ngày hội nghề nghiệp tương lai.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748873874/video31_yqkmec.mp4', 'Video 31', 'Tham gia giải chạy marathon.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748873874/video31_yqkmec.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 31</h3>
+            <p>Tham gia giải chạy marathon.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748873879/video32_sado6q.mp4', 'Video 32', 'Buổi học kỹ năng lãnh đạo.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748873879/video32_sado6q.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 32</h3>
+            <p>Buổi học kỹ năng lãnh đạo.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865578/phe8ounfnpdeneewfk1n.mp4', 'Video 33', 'Ngày hội âm nhạc trường học.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865578/phe8ounfnpdeneewfk1n.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 33</h3>
+            <p>Ngày hội âm nhạc trường học.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865578/kbt9to2qbdyhmmptkl0i.mp4', 'Video 34', 'Tham gia hội thi vẽ tranh.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865578/kbt9to2qbdyhmmptkl0i.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 34</h3>
+            <p>Tham gia hội thi vẽ tranh.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865585/fzrqhzqk9onknmf5emng.mp4', 'Video 35', 'Buổi học về bảo vệ môi trường.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865585/fzrqhzqk9onknmf5emng.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 35</h3>
+            <p>Buổi học về bảo vệ môi trường.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865589/i0tn8skipwgiltffmtlc.mp4', 'Video 36', 'Ngày hội sáng tạo công nghệ.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865589/i0tn8skipwgiltffmtlc.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 36</h3>
+            <p>Ngày hội sáng tạo công nghệ.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865581/jnrylcihmlezzsr1gjsm.mp4', 'Video 37', 'Tham gia hội thi cắm hoa.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865581/jnrylcihmlezzsr1gjsm.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 37</h3>
+            <p>Tham gia hội thi cắm hoa.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('vhttps://res.cloudinary.com/dnqzcnkla/video/upload/v1748865586/cpy7legy6zczahtxxmc3.mp4', 'Video 38', 'Buổi học kỹ năng giao tiếp.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865586/cpy7legy6zczahtxxmc3.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 38</h3>
+            <p>Buổi học kỹ năng giao tiếp.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865596/sik31e5vv1xvmhztamie.mp4', 'Video 39', 'Ngày hội văn hóa dân gian.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865596/sik31e5vv1xvmhztamie.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 39</h3>
+            <p>Ngày hội văn hóa dân gian.</p>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865594/zzf62r85xkfafu6gn6lo.mp4', 'Video 40', 'Khoảnh khắc đáng nhớ cuối năm.')">
+          <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865594/zzf62r85xkfafu6gn6lo.mp4" loop muted playsinline autoplay></video>
+          <div class="gallery-content">
+            <h3>Video 40</h3>
+            <p>Khoảnh khắc đáng nhớ cuối năm.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phần ảnh với grid -->
+      <h3>Ảnh kỷ niệm</h3>
+      <div class="memories-grid">
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863158/%E1%BA%A3nh_gv1_hojozt.jpg" alt="Cô Trang" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Cô Trang</h3>
+            <p>Giáo viên môn văn của tụi mình nè.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863155/%E1%BA%A3nh_gv2_i2lpj3.jpg" alt="Ảnh giáo viên 2" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Thầy/Cô 2</h3>
+            <p>Người truyền cảm hứng cho cả lớp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863158/%E1%BA%A3nh_gv3_ofjgok.jpg" alt="Ảnh giáo viên 3" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Thầy/Cô 3</h3>
+            <p>Luôn đồng hành cùng lớp trong mọi hoạt động.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863156/%E1%BA%A3nh_gv4_vahrrd.jpg" alt="Ảnh giáo viên 4" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Thầy/Cô 4</h3>
+            <p>Người thầy đáng kính của lớp 12A9.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863156/%E1%BA%A3nh_lp1_tnvabk.jpg" alt="Ảnh lớp 1" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 1</h3>
+            <p>Ngày đầu tiên gặp gỡ cả lớp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863157/%E1%BA%A3nh_lp2_my37fp.jpg" alt="Ảnh lớp 2" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 2</h3>
+            <p>Buổi học đầu tiên đầy kỷ niệm.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863157/%E1%BA%A3nh_lp3_wtezim.jpg" alt="Ảnh lớp 3" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 3</h3>
+            <p>Ngày hội thể thao sôi động.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863158/%E1%BA%A3nh_lp4_qromov.jpg" alt="Ảnh lớp 4" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 4</h3>
+            <p>Chuyến đi dã ngoại đáng nhớ.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863167/%E1%BA%A3nh_lp5_rd2obh.jpg" alt="Ảnh lớp 5" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 5</h3>
+            <p>Buổi văn nghệ đầy cảm xúc.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863160/%E1%BA%A3nh_lp6_nyzzmp.jpg" alt="Ảnh lớp 6" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 6</h3>
+            <p>Hội trại sôi động của lớp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863165/%E1%BA%A3nh_lp7_oht4ka.jpg" alt="Ảnh lớp 7" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 7</h3>
+            <p>Ngày chụp ảnh tập thể đầu tiên.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863159/%E1%BA%A3nh_lp8_kwnco1.jpg" alt="Ảnh lớp 8" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 8</h3>
+            <p>Buổi học nhóm ngoài trời.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863160/%E1%BA%A3nh_lp9_ttjl5c.jpg" alt="Ảnh lớp 9" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 9</h3>
+            <p>Ngày hội khoa học sáng tạo.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863161/%E1%BA%A3nh_lp10_q2rnhs.jpg" alt="Ảnh lớp 10" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 10</h3>
+            <p>Tham gia hoạt động ngoại khóa.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863162/%E1%BA%A3nh_lp11_olavcq.jpg" alt="Ảnh lớp 11" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 11</h3>
+            <p>Buổi sinh hoạt lớp vui vẻ.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863164/%E1%BA%A3nh_lp12_ubucem.jpg" alt="Ảnh lớp 12" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 12</h3>
+            <p>Hội hè cùng bạn bè.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863166/%E1%BA%A3nh_lp13_pggpqp.jpg" alt="Ảnh lớp 13" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 13</h3>
+            <p>Chuyến đi từ thiện ý nghĩa.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863166/%E1%BA%A3nh_lp14_pp7xik.jpg" alt="Ảnh lớp 14" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 14</h3>
+            <p>Ngày hội truyền thống trường.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863166/%E1%BA%A3nh_lp15_n8rnoy.jpg" alt="Ảnh lớp 15" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 15</h3>
+            <p>Lễ kỷ niệm thành lập trường.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863167/%E1%BA%A3nh_lp16_hwabmb.jpg" alt="Ảnh lớp 16" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 16</h3>
+            <p>Buổi học ngoại khóa thú vị.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863170/%E1%BA%A3nh_lp17_jzsn9v.jpg" alt="Ảnh lớp 17" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 17</h3>
+            <p>Tham gia giải bóng đá lớp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863169/%E1%BA%A3nh_lp18_ffcz7f.jpg" alt="Ảnh lớp 18" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 18</h3>
+            <p>Chuyến đi thực tế tại bảo tàng.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863173/%E1%BA%A3nh_lp19_msamo9.jpg" alt="Ảnh lớp 19" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 19</h3>
+            <p>Buổi tiệc cuối năm ấm áp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863170/%E1%BA%A3nh_lp20_ti7mbz.jpg" alt="Ảnh lớp 20" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 20</h3>
+            <p>Ngày hội thể thao toàn trường.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863173/%E1%BA%A3nh_lp21_fqvcl0.jpg" alt="Ảnh lớp 21" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 21</h3>
+            <p>Buổi học nhóm ngoài trời.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863173/%E1%BA%A3nh_lp22_khyxo9.jpg" alt="Ảnh lớp 22" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 22</h3>
+            <p>Tham gia hội thi nấu ăn.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863174/%E1%BA%A3nh_lp23_bppqaq.jpg" alt="Ảnh lớp 23" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 23</h3>
+            <p>Ngày hội môi trường xanh.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863173/%E1%BA%A3nh_lp24_nrieen.jpg" alt="Ảnh lớp 24" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 24</h3>
+            <p>Buổi họp lớp đầy cảm xúc.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863175/%E1%BA%A3nh_lp25_gjitst.jpg" alt="Ảnh lớp 25" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 25</h3>
+            <p>Chuyến đi picnic vui vẻ.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863174/%E1%BA%A3nh_lp26_hhdhsx.jpg" alt="Ảnh lớp 26" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 26</h3>
+            <p>Ngày hội sách và tri thức.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863179/%E1%BA%A3nh_lp27_ht3jkk.jpg" alt="Ảnh lớp 27" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 27</h3>
+            <p>Tham gia hoạt động tình nguyện.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863179/%E1%BA%A3nh_lp28_ywfmek.jpg" alt="Ảnh lớp 28" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 28</h3>
+            <p>Buổi học kỹ năng sống.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863179/%E1%BA%A3nh_lp29_coepel.jpg" alt="Ảnh lớp 29" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 29</h3>
+            <p>Ngày hội nghề nghiệp tương lai.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863179/%E1%BA%A3nh_lp30_xp3qdc.jpg" alt="Ảnh lớp 30" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh lớp 30</h3>
+            <p>Tham gia giải chạy marathon.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862771/%E1%BA%A3nh_1_wcq2p4.jpg" alt="Ảnh 1" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 1</h3>
+            <p>Khoảnh khắc vui vẻ cùng bạn bè.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862777/%E1%BA%A3nh_2_wz9csg.jpg" alt="Ảnh 2" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 2</h3>
+            <p>Buổi học nhóm đầy kỷ niệm.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862771/%E1%BA%A3nh_3_d10x3n.jpg" alt="Ảnh 3" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 3</h3>
+            <p>Ngày hội thể thao sôi động.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862775/%E1%BA%A3nh_4_eqzyax.jpg" alt="Ảnh 4" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 4</h3>
+            <p>Chuyến đi dã ngoại đáng nhớ.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862773/%E1%BA%A3nh_5_yyyw86.jpg" alt="Ảnh 5" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 5</h3>
+            <p>Buổi văn nghệ đầy cảm xúc.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862779/%E1%BA%A3nh_6_ziwfgl.jpg" alt="Ảnh 6" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 6</h3>
+            <p>Hội trại sôi động của lớp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862776/%E1%BA%A3nh_7_wbxhkw.jpg" alt="Ảnh 7" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 7</h3>
+            <p>Ngày chụp ảnh tập thể đầu tiên.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862776/%E1%BA%A3nh_8_awntcc.jpg" alt="Ảnh 8" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 8</h3>
+            <p>Buổi học nhóm ngoài trời.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862778/%E1%BA%A3nh_9_ofwg7h.jpg" alt="Ảnh 9" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 9</h3>
+            <p>Ngày hội khoa học sáng tạo.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862778/%E1%BA%A3nh_10_gq0zlm.jpg" alt="Ảnh 10" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 10</h3>
+            <p>Tham gia hoạt động ngoại khóa.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862780/%E1%BA%A3nh_11_cwmwo8.jpg" alt="Ảnh 11" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 11</h3>
+            <p>Buổi sinh hoạt lớp vui vẻ.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862780/%E1%BA%A3nh_12_iast6n.jpg" alt="Ảnh 12" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 12</h3>
+            <p>Hội hè cùng bạn bè.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862784/%E1%BA%A3nh_13_qlexiy.jpg" alt="Ảnh 13" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 13</h3>
+            <p>Chuyến đi từ thiện ý nghĩa.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862781/%E1%BA%A3nh_14_bkwrcc.jpg" alt="Ảnh 14" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 14</h3>
+            <p>Ngày hội truyền thống trường.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862782/%E1%BA%A3nh_15_hbpthv.jpg" alt="Ảnh 15" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 15</h3>
+            <p>Lễ kỷ niệm thành lập trường.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862783/%E1%BA%A3nh_16_qx5qi4.jpg" alt="Ảnh 16" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 16</h3>
+            <p>Buổi học ngoại khóa thú vị.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862785/%E1%BA%A3nh_17_fgkz6w.jpg" alt="Ảnh 17" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 17</h3>
+            <p>Tham gia giải bóng đá lớp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862784/%E1%BA%A3nh_18_utsp8n.jpg" alt="Ảnh 18" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 18</h3>
+            <p>Chuyến đi thực tế tại bảo tàng.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862786/%E1%BA%A3nh_19_n6frtz.jpg" alt="Ảnh 19" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 19</h3>
+            <p>Buổi tiệc cuối năm ấm áp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862774/%E1%BA%A3nh_20_h35ptq.jpg" alt="Ảnh 20" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 20</h3>
+            <p>Ngày hội thể thao toàn trường.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862774/%E1%BA%A3nh_21_lnyb8w.jpg" alt="Ảnh 21" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 21</h3>
+            <p>Buổi học nhóm ngoài trời.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862771/%E1%BA%A3nh_22_gqeycu.jpg" alt="Ảnh 22" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 22</h3>
+            <p>Tham gia hội thi nấu ăn.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862773/%E1%BA%A3nh_23_ggy5fx.jpg" alt="Ảnh 23" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 23</h3>
+            <p>Ngày hội môi trường xanh.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862776/%E1%BA%A3nh_24_scota0.jpg" alt="Ảnh 24" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 24</h3>
+            <p>Buổi họp lớp đầy cảm xúc.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862776/%E1%BA%A3nh_25_gknglb.jpg" alt="Ảnh 25" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 25</h3>
+            <p>Chuyến đi picnic vui vẻ.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862777/%E1%BA%A3nh_26_abpvxr.jpg" alt="Ảnh 26" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 26</h3>
+            <p>Ngày hội sách và tri thức.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862778/%E1%BA%A3nh_27_kfuifn.jpg" alt="Ảnh 27" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 27</h3>
+            <p>Tham gia hoạt động tình nguyện.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862781/%E1%BA%A3nh_28_vjarum.jpg" alt="Ảnh 28" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 28</h3>
+            <p>Buổi học kỹ năng sống.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862781/%E1%BA%A3nh_29_dpmc9a.jpg" alt="Ảnh 29" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 29</h3>
+            <p>Ngày hội nghề nghiệp tương lai.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862782/%E1%BA%A3nh_30_wei3mh.jpg" alt="Ảnh 30" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 30</h3>
+            <p>Tham gia giải chạy marathon.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862783/%E1%BA%A3nh_31_tzieau.jpg" alt="Ảnh 31" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 31</h3>
+            <p>Buổi học kỹ năng lãnh đạo.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862787/%E1%BA%A3nh_32_xk9cr1.jpg" alt="Ảnh 32" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 32</h3>
+            <p>Ngày hội âm nhạc trường học.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862785/%E1%BA%A3nh_33_mgeqzj.jpg" alt="Ảnh 33" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 33</h3>
+            <p>Tham gia hội thi vẽ tranh.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862784/%E1%BA%A3nh_34_pkbd7b.jpg" alt="Ảnh 34" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 34</h3>
+            <p>Buổi học về bảo vệ môi trường.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862786/%E1%BA%A3nh_35_vyejrh.jpg" alt="Ảnh 35" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 35</h3>
+            <p>Ngày hội sáng tạo công nghệ.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862786/%E1%BA%A3nh_36_r1tuux.jpg" alt="Ảnh 36" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 36</h3>
+            <p>Tham gia hội thi cắm hoa.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862787/%E1%BA%A3nh_37_cbzkn6.jpg" alt="Ảnh 37" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 37</h3>
+            <p>Buổi học kỹ năng giao tiếp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748863828/z6634965059544_734fb28ec8e581e6e788cc70b4ec9cf4_rzsjxx.jpg" alt="Ảnh 38" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 38</h3>
+            <p>Ngày hội văn hóa dân gian.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862788/%E1%BA%A3nh_39_r34wag.jpg" alt="Ảnh 39" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 39</h3>
+            <p>Khoảnh khắc đáng nhớ cuối năm.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862789/%E1%BA%A3nh_40_tmquu7.jpg" alt="Ảnh 40" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 40</h3>
+            <p>Buổi họp lớp đầy cảm xúc.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862795/%E1%BA%A3nh_41_ikxap4.jpg" alt="Ảnh 41" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 41</h3>
+            <p>Chụp ảnh kỷ yếu cùng lớp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862789/%E1%BA%A3nh_42_mamy0w.jpg" alt="Ảnh 42" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 42</h3>
+            <p>Ngày hội thể thao đáng nhớ.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862790/%E1%BA%A3nh_43_fbkrai.jpg" alt="Ảnh 43" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 43</h3>
+            <p>Buổi học nhóm đầy kỷ niệm.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862790/%E1%BA%A3nh_44_muq1bs.jpg" alt="Ảnh 44" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 44</h3>
+            <p>Tham gia hoạt động ngoại khóa.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862790/%E1%BA%A3nh_45_exdgfo.jpg" alt="Ảnh 45" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 45</h3>
+            <p>Chuyến đi dã ngoại vui vẻ.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862790/%E1%BA%A3nh_46_r8qdvz.jpg" alt="Ảnh 46" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 46</h3>
+            <p>Buổi văn nghệ đầy cảm xúc.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862791/%E1%BA%A3nh_47_bn6vrb.jpg" alt="Ảnh 47" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 47</h3>
+            <p>Hội trại sôi động của lớp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862791/%E1%BA%A3nh_48_kn136j.jpg" alt="Ảnh 48" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 48</h3>
+            <p>Ngày hội khoa học sáng tạo.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862791/%E1%BA%A3nh_49_ofdoco.jpg" alt="Ảnh 49" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 49</h3>
+            <p>Buổi sinh hoạt lớp vui vẻ.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862791/%E1%BA%A3nh_50_utoykh.jpg" alt="Ảnh 50" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 50</h3>
+            <p>Hội hè cùng bạn bè.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862792/%E1%BA%A3nh_51_tptvn5.jpg" alt="Ảnh 51" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 51</h3>
+            <p>Chuyến đi từ thiện ý nghĩa.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862791/%E1%BA%A3nh_52_bplchn.jpg" alt="Ảnh 52" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 52</h3>
+            <p>Ngày hội truyền thống trường.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862794/%E1%BA%A3nh_53_dnpfdj.jpg" alt="Ảnh 53" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 53</h3>
+            <p>Lễ kỷ niệm thành lập trường.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862792/%E1%BA%A3nh_54_axac7w.jpg" alt="Ảnh 54" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 54</h3>
+            <p>Buổi học ngoại khóa thú vị.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862792/%E1%BA%A3nh_55_szfvzd.jpg" alt="Ảnh 55" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 55</h3>
+            <p>Tham gia giải bóng đá lớp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862792/%E1%BA%A3nh_56_jxj9hi.jpg" alt="Ảnh 56" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 56</h3>
+            <p>Chuyến đi thực tế tại bảo tàng.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862793/%E1%BA%A3nh_57_clq1ef.jpg" alt="Ảnh 57" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 57</h3>
+            <p>Buổi tiệc cuối năm ấm áp.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862793/%E1%BA%A3nh_58_kjr2fa.jpg" alt="Ảnh 58" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 58</h3>
+            <p>Ngày hội thể thao toàn trường.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862795/%E1%BA%A3nh_59_svyy64.jpg" alt="Ảnh 59" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 59</h3>
+            <p>Buổi học nhóm ngoài trời.</p>
+          </div>
+        </div>
+        <div class="memory-item">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862795/%E1%BA%A3nh_60_m2burj.jpg" alt="Ảnh 60" class="memory-img" loading="lazy">
+          <div class="memory-content">
+            <h3>Ảnh 60</h3>
+            <p>Tham gia hội thi nấu ăn.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="messages">
+    <h2>Lời nhắn</h2>
+    <div class="message-card" onclick="showMessage('Đồng Xuân An', 'Không ai có thể sống thay bạn _ hãy chọn lối đi của chính mình.')">Đồng Xuân An</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Ngọc Mai Anh', 'Nếu không biết mình đang đi đâu, mọi con đường đều là lạc lối.')">Nguyễn Ngọc Mai Anh</div>
+    <div class="message-card" onclick="showMessage('Lưu Trần Gia Bảo', 'Thành công không phải đích đến, mà là một lối sống.')">Lưu Trần Gia Bảo</div>
+    <div class="message-card" onclick="showMessage('Ngô Phan Thái Bình', 'Cuộc sống không đòi hỏi bạn phải hoàn hảo, chỉ cần bạn chân thành.')">Ngô Phan Thái Bình</div>
+    <div class="message-card" onclick="showMessage('Đào Thị Huyền Diệu', 'Bạn không cần phải giỏi mới bắt đầu, nhưng phải bắt đầu mới giỏi được.')">Đào Thị Huyền Diệu</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Thị Xuân Diệu', 'Người thành công là người không bỏ cuộc khi mọi thứ trở nên khó khăn.')">Nguyễn Thị Xuân Diệu</div>
+    <div class="message-card" onclick="showMessage('Bùi Chí Dũng', 'Sự bền bỉ đánh bại tài năng khi tài năng không chịu nỗ lực.')">Bùi Chí Dũng</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Trần Khánh Duy', 'Đi chậm cũng được, miễn là đừng đứng yên.')">Nguyễn Trần Khánh Duy</div>
+    <div class="message-card" onclick="showMessage('Lê Anh Đào', 'Hãy là người làm chứ đừng chỉ là người mơ.')">Lê Anh Đào</div>
+    <div class="message-card" onclick="showMessage('Hoàng Thị Thúy Hằng', 'Nếu hôm nay mệt, nghỉ ngơi _ nhưng đừng quay đầu.')">Hoàng Thị Thúy Hằng</div>
+    <div class="message-card" onclick="showMessage('Hoàng Gia Hân', 'Bạn được phép yếu đuối, nhưng đừng để nó định nghĩa bạn.')">Hoàng Gia Hân</div>
+    <div class="message-card" onclick="showMessage('Phùng Gia Hân', 'Không ai có thể làm bạn tổn thương nếu bạn không cho phép.')">Phùng Gia Hân</div>
+    <div class="message-card" onclick="showMessage('Trần Gia Huy', 'Hạnh phúc là lựa chọn, không phải kết quả.')">Trần Gia Huy</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Thị Thanh Huyền', 'Đừng cho phép ai mở cửa trái tim khi đang là người sợ bị tổn thương.')">Nguyễn Thị Thanh Huyền</div>
+    <div class="message-card" onclick="showMessage('Trần Thị Ngọc Huyền', 'Tự yêu bản thân không phải là ích kỷ, đó là nền tảng của mọi tình yêu.')">Trần Thị Ngọc Huyền</div>
+    <div class="message-card" onclick="showMessage('Trần Thị Thu Hường', 'Người thật sự đáng trân trọng là người ở lại khi cả thế giới quay lưng.')">Trần Thị Thu Hường</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Hữu Khánh', 'Ước mơ không dành cho người chờ đợi _ mà cho người hành động.')">Nguyễn Hữu Khánh</div>
+    <div class="message-card" onclick="showMessage('Phùng Gia Khánh', 'Hãy sống cuộc đời khiến bạn tự hào khi kể lại.')">Phùng Gia Khánh</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Thị Phương Mai', 'Bạn mạnh mẽ hơn bạn nghĩ.')">Nguyễn Thị Phương Mai</div>
+    <div class="message-card" onclick="showMessage('Phạm Ngọc Trúc My', 'Đừng đánh giá hành trình của mình dựa trên chương truyện của người khác.')">Phạm Ngọc Trúc My</div>
+    <div class="message-card" onclick="showMessage('Trần Khánh Ngọc', 'Hãy là phiên bản tốt nhất của chính mình _ không cần sao chép ai cả.')">Trần Khánh Ngọc</div>
+    <div class="message-card" onclick="showMessage('Trương Phạm Kim Nhàn', 'Cuộc sống không phải luôn dễ dàng, nhưng luôn đáng sống.')">Trương Phạm Kim Nhàn</div>
+    <div class="message-card" onclick="showMessage('Ngô Thanh Nhân', 'Nếu bạn không theo đuổi ước mơ của mình, bạn sẽ làm việc cho ước mơ của người khác')">Ngô Thanh Nhân</div>
+    <div class="message-card" onclick="showMessage('Huỳnh Long Nhật', 'Mọi điều vĩ đại đều bắt đầu từ một ý tưởng nhỏ.')">Huỳnh Long Nhật</div>
+    <div class="message-card" onclick="showMessage('Dương Ngọc Nhi', 'Hãy ngủ đủ giấc và uống nhiều nước. Cười nhiều hơn một chút, lo lắng ít đi một chút.')">Dương Ngọc Nhi</div>
+    <div class="message-card" onclick="showMessage('Lê Ngọc Thảo Như', 'Khi bạn ngẩng đầu nhìn lại, bạn sẽ thấy mình đã đi rất xa.')">Lê Ngọc Thảo Như</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Phạm Quỳnh Như', 'Sống chậm lại, hít thở sâu, và tận hưởng khoảnh khắc này.')">Nguyễn Phạm Quỳnh Như</div>
+    <div class="message-card" onclick="showMessage('Vương Quý Phi', 'Hãy học cách biết ơn _ mọi điều đều có lý do.')">Vương Quý Phi</div>
+    <div class="message-card" onclick="showMessage('Đặng Phương Quỳnh', 'Mỗi hành trình đều có giá trị, đừng so sánh với người khác.')">Đặng Phương Quỳnh</div>
+    <div class="message-card" onclick="showMessage('Huỳnh Phát Tài', 'Càng trưởng thành, càng phải biết cách dịu dàng với bản thân.')">Huỳnh Phát Tài</div>
+    <div class="message-card" onclick="showMessage('Hoàng Phạm Duy Tân', 'Mỗi nỗ lực dù nhỏ cũng đang thay đổi bạn từng ngày.')">Hoàng Phạm Duy Tân</div>
+    <div class="message-card" onclick="showMessage('Trịnh Thị Kim Thanh', 'Không ai hiểu mình hơn chính mình _ hãy lắng nghe nội tâm.')">Trịnh Thị Kim Thanh</div>
+    <div class="message-card" onclick="showMessage('Bùi Phương Thảo', 'Học cách tha thứ cho bản thân vì những sai lầm cũ.')">Bùi Phương Thảo</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Võ Hồng Thi', 'Dịu dàng một chút đừng để tiếng ồn bên ngoài lấn át tiếng nói bên trong.')">Nguyễn Võ Hồng Thi</div>
+    <div class="message-card" onclick="showMessage('Lê Ngọc Quỳnh Thư', 'Tình bạn thật sự không đòi hỏi phải nhắn mỗi ngày, chỉ cần luôn hiểu nhau.')">Lê Ngọc Quỳnh Thư</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Hà Minh Thư', 'Hãy ở bên người khiến bạn trở thành phiên bản tốt hơn của chính mình.')">Nguyễn Hà Minh Thư</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Thị Anh Thư', 'Trưởng thành không phải là biết tất cả, mà là biết im lặng đúng lúc')">Nguyễn Thị Anh Thư</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Song Bích Thy', 'Mỗi người đều mang trong mình một nỗi buồn không tên _ hãy sống tử tế.')">Nguyễn Song Bích Thy</div>
+    <div class="message-card" onclick="showMessage('Phạm Thanh Tuyết Thy', 'Luôn có ánh sáng ở cuối đường hầm _ đừng tắt đèn trong lòng.')">Phạm Thanh Tuyết Thy</div>
+    <div class="message-card" onclick="showMessage('Tạ Thủy Tiên', 'Hãy yêu như chưa từng tổn thương, nhưng đừng quên bài học cũ.')">Tạ Thủy Tiên</div>
+    <div class="message-card" onclick="showMessage('Đỗ Văn Đức Tình', 'Cười với cuộc đời _ nó sẽ cười lại với bạn.')">Đỗ Văn Đức Tình</div>
+    <div class="message-card" onclick="showMessage('Lê Ngọc Yến Trang', 'Đôi khi điều quý giá nhất là khoảng lặng giữa hai tiếng thở dài.')">Lê Ngọc Yến Trang</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Ngọc Quỳnh Trâm', 'Thương ai đó _ hãy nói ra, đừng chờ muộn màng.')">Nguyễn Ngọc Quỳnh Trâm</div>
+    <div class="message-card" onclick="showMessage('Lâm Huyền Trân', 'Kỷ luật là cầu nối giữa mục tiêu và hiện thực')">Lâm Huyền Trân</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Quang Tú', 'Biết mình là ai?, Biết mình muốn gì?, Biết mình cần gì? đó đã là một nửa thành công.')">Nguyễn Quang Tú</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Quang Tuấn', 'Tương lai sẽ biết ơn bạn của hôm nay _ đừng từ bỏ!')">Nguyễn Quang Tuấn</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Thùy Minh Tuệ', 'Hãy chấp nhận bản thân như một bản nhạc chưa hoàn chỉnh.')">Nguyễn Thùy Minh Tuệ</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Văn Tùng', 'Hãy tử tế _ bạn không biết người khác đang trải qua điều gì.')">Nguyễn Văn Tùng</div>
+    <div class="message-card" onclick="showMessage('Trần Chí Tùng', 'Không ai cứu mình ngoài chính mình _ học cách đứng dậy.')">Trần Chí Tùng</div>
+    <div class="message-card" onclick="showMessage('Trần Lê Khánh Vân', 'Không cần ai hoàn hảo, chỉ cần ai đó thật lòng.')">Trần Lê Khánh Vân</div>
+    <div class="message-card" onclick="showMessage('Trần Thị Hải Vy', 'Tình yêu bắt đầu bằng sự lắng nghe, thấu hiểu và kể cả lòng bao dung.')">Trần Thị Hải Vy</div>
+    <div class="message-card" onclick="showMessage('Phạm Hải Yến', 'Không ai là bạn tốt với bạn hơn chính bạn.')">Phạm Hải Yến</div>
+  </section>
+
+  <section id="write-message">
+    <h2>Viết tâm thư</h2>
+    <div class="write-message-form">
+      <input type="text" id="name" placeholder="Tên của bạn" required>
+      <textarea id="message" placeholder="Lời nhắn nhủ" required></textarea>
+      <button type="button" onclick="submitMessage()">Gửi</button>
+    </div>
+    <div id="submitted-messages"></div>
+  </section>
+
+  <div class="modal" id="message-modal">
+    <div class="modal-content">
+      <h3 id="modal-name">Tên thành viên</h3>
+      <p id="modal-message">Nội dung lời nhắn mẫu</p>
+      <button type="button" onclick="closeModal()">Đóng</button>
+    </div>
+  </div>
+
+  <div class="modal" id="video-modal">
+    <div class="modal-content">
+      <h3 id="video-modal-title">Tiêu đề video</h3>
+      <video id="video-modal-player" controls muted playsinline>
+        <source id="video-modal-source" src="" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ phát video.
+      </video>
+      <p id="video-modal-description">Mô tả video</p>
+      <button type="button" onclick="closeVideoModal()">Đóng</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
