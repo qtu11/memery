@@ -1099,8 +1099,11 @@
    <!-- Section: Viết tâm thư -->
   <section id="write-message">
     <div class="container">
+      <!-- Section: Viết tâm thư -->
+  <section id="write-message">
+    <div class="container">
       <h2>Viết tâm thư</h2>
-      <form onsubmit="event.preventDefault(); submitMessage();">
+      <form id="message-form">
         <div class="form-group">
           <label for="name">Tên của bạn:</label>
           <input type="text" id="name" placeholder="Nhập tên của bạn" required>
@@ -1124,6 +1127,7 @@
     </div>
   </div>
 
+
   <div class="modal" id="video-modal">
     <div class="modal-content">
       <h3 id="video-modal-title">Tiêu đề video</h3>
@@ -1137,7 +1141,6 @@
   </div>
 
   <script src="script.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
+ 
 </body>
 </html>
