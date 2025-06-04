@@ -1,0 +1,939 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #FF99CC;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Thanh điều hướng */
+nav {
+  background-color: #ffb3d9;
+  padding: 10px 0;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #ffffff;
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu li {
+  margin: 0 15px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+  color: #e4b0db;
+}
+
+/* Responsive design cho điện thoại */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #FF99CC;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(114, 114, 114, 0.2);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 10px;
+    font-size: 16px; /* Đảm bảo chữ đủ lớn để đọc */
+  }
+}
+
+/* Nhạc nền và nút */
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #FF99CC;    
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+button:hover {
+  background-color: #db4dc4;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.modal-content button {
+  margin-top: 10px;
+}
+
+/* Các phần khác (có thể thêm tùy chỉnh theo nhu cầu) */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(238, 139, 208, 0.5);
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Section chung */
+section {
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: none;
+  background-color: #FFFFFF;
+  z-index: 2;
+}
+
+section.active {
+  display: block;
+}
+
+/* Trang chủ */
+#home {
+  text-align: center;
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center/cover;
+  color: #FF99CC;
+  position: relative;
+  z-index: 2;
+}
+
+#home h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#members {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#members div {
+  background-color: #FFE6F0;
+  color: #FF99CC;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+}
+
+#members div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Thư viện ảnh/video */
+section.gallery-section {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background-color: #FFFFFF;
+}
+
+#gallery h2 {
+  margin-bottom: 20px;
+  color: #FF99CC;
+  font-size: 2.5em;
+}
+
+#gallery h3 {
+  margin: 20px 0;
+  color: #FF99CC;
+  font-size: 1.8em;
+}
+
+/* Grid cho video */
+#gallery .video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+#gallery .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#gallery .gallery-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255,153,204,0.3);
+}
+
+#gallery .gallery-item video {
+  width: 240px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#gallery .gallery-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#gallery .gallery-item:hover .gallery-content {
+  opacity: 1;
+}
+
+/* Grid cho ảnh */
+#gallery .memories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+#gallery .memory-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#gallery .memory-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255,153,204,0.3);
+}
+
+#gallery .memory-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#gallery .memory-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#gallery .memory-item:hover .memory-content {
+  opacity: 1;
+}
+
+/* Lời nhắn */
+#messages {
+  text-align: center;
+}
+
+#messages h2 {
+  margin-bottom: 20px;
+  color: #FF99CC;
+  font-size: 2.5em;
+}
+
+#messages .message-card {
+  background-color: #FFE6F0;
+  color: #FF99CC;
+  padding: 15px;
+  margin: 10px auto;
+  max-width: 300px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+}
+
+#messages .message-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+/* Viết tâm thư */
+#write-message {
+  text-align: center;
+}
+
+#write-message h2 {
+  margin-bottom: 20px;
+  color: #FF99CC;
+  font-size: 2.5em;
+}
+
+#write-message form,
+#write-message #write-message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Tăng khoảng cách giữa các phần tử */
+  max-width: 500px; /* Tăng chiều rộng form */
+  margin: 0 auto;
+  padding: 30px; /* Tăng padding để thoáng hơn */
+  background-color: #FFE6F0; /* Thêm nền nhẹ */
+  border-radius: 10px; /* Bo góc */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+}
+
+#write-message input,
+#write-message textarea {
+  width: 50%; /* Giữ width 50% */
+  margin: 0 auto; /* Căn giữa */
+  padding: 12px; /* Tăng padding để dễ nhập liệu */
+  border: 2px solid #FF99CC;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Hiệu ứng khi hover */
+}
+
+#write-message input:hover,
+#write-message textarea:hover,
+#write-message input:focus,
+#write-message textarea:focus {
+  border-color: #FF66B2; /* Đổi màu viền khi hover/focus */
+  box-shadow: 0 0 8px rgba(255, 102, 178, 0.3); /* Thêm bóng nhẹ */
+  outline: none;
+}
+
+#write-message textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+#write-message button {
+  width: 50%; /* Đồng bộ với width của input và textarea */
+  margin: 0 auto; /* Căn giữa */
+  background-color: #FF99CC;
+  color: #FFFFFF;
+  padding: 12px; /* Tăng padding cho nút */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng hover */
+}
+
+#write-message button:hover {
+  background-color: #FF66B2;
+  transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+#submitted-messages div {
+  background-color: #FFE6F0;
+  color: #FF99CC;
+  padding: 15px;
+  margin: 10px auto;
+  max-width: 500px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+/* Modal nội dung khung trắng sau khi bấm xem video*/
+.modal-content {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  width: 700px;
+  height: 700px;
+  text-align: center;
+  color: #FF99CC;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-content h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+
+.modal-content button {
+  background-color: #FF99CC;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.modal-content button:hover {
+  background-color: #FF66B2;
+}
+
+#videoModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  backdrop-filter: blur(5px);
+}
+.modal-content video {
+  width: 600px;
+  height: 510px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  
+} 
+
+#modalVideo {
+  width: 280px; /* Kích thước cố định 280px trên máy tính */
+  height: 240px; /* Kích thước cố định 240px trên máy tính */
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+/* Hiệu ứng hạt rơi */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  background: #FF99CC;
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #home h1 {
+    font-size: 2.5em;
+  }
+
+  #gallery .gallery-item {
+    width: 180px;
+    height: 180px;
+  }
+
+  #gallery .memories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  #write-message form {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  #home h1 {
+    font-size: 2em;
+  }
+
+  #members {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  #members div {
+    font-size: 14px;
+  }
+
+  #gallery h2 {
+    font-size: 2em;
+  }
+
+  #gallery h3 {
+    font-size: 1.5em;
+  }
+
+  #gallery .gallery-item {
+    width: 150px;
+    height: 150px;
+  }
+
+  #gallery .memories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  #gallery .memory-img {
+    height: 150px;
+  }
+
+  #messages h2 {
+    font-size: 2em;
+  }
+
+  #messages .message-card {
+    max-width: 250px;
+    font-size: 14px;
+  }
+
+  #write-message h2 {
+    font-size: 2em;
+  }
+
+  #write-message form {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  #write-message input,
+  #write-message textarea {
+    font-size: 14px;
+  }
+
+  #write-message button {
+    font-size: 14px;
+  }
+
+  #submitted-messages div {
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    padding: 15px;
+  }
+  .modal-content video {
+    max-width: 90%;
+    padding: 5px;
+  }
+  .modal-content h3 {
+    font-size: 1.5em;
+  }
+
+  .modal-content p {
+    font-size: 20px;
+  }
+
+  .modal-content button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  button[onclick="playBackgroundMusic()"] {
+    top: 50px;
+    left: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  nav {
+    padding: 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 60px 10px;
+  }
+
+  #home h1 {
+    font-size: 1.5em;
+  }
+
+  #members {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+  }
+
+  #members div {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  #gallery h2 {
+    font-size: 1.5em;
+  }
+
+  #gallery h3 {
+    font-size: 1.2em;
+  }
+
+  #gallery .gallery-item {
+    width: 120px;
+    height: 120px;
+  }
+
+  #gallery .gallery-content {
+    font-size: 10px;
+    padding: 3px;
+  }
+
+  #gallery .memories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  #gallery .memory-img {
+    height: 120px;
+  }
+
+  #gallery .memory-content {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  #gallery .scroll-button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #messages h2 {
+    font-size: 1.5em;
+  }
+
+  #messages .message-card {
+    max-width: 200px;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  #write-message h2 {
+    font-size: 1.5em;
+  }
+
+  #write-message form {
+    padding: 10px;
+  }
+
+  #write-message input,
+  #write-message textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  #write-message button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  #submitted-messages div {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  text-align: center;
+  color: #FF99CC;
+}
+
+.modal-content h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  background-color: #FF99CC;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.modal-content button:hover {
+  background-color: #FF66B2;
+}
+
+
+/* Hiệu ứng hạt rơi */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  background: #FF99CC;
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #home h1 {
+    font-size: 2.5em;
+  }
+
+  #members {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  #gallery .video-grid,
+  #gallery .memories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  #gallery .gallery-item video,
+  #gallery .memory-img {
+    height: 180px;
+  }
+
+  #write-message form {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 16px;
+  }
+
+  #home h1 {
+    font-size: 2em;
+  }
+
+  #members {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  #members div {
+    font-size: 14px;
+  }
+
+  #gallery h2 {
+    font-size: 2em;
+  }
+
+  #gallery h3 {
+    font-size: 1.5em;
+  }
+
+  #gallery .video-grid,
+  #gallery .memories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  #gallery .gallery-item video,
+  #gallery .memory-img {
+    height: 150px;
+  }
+
+  #messages h2 {
+    font-size: 2em;
+  }
+
+  #messages .message-card {
+    max-width: 250px;
+    font-size: 14px;
+  }
+
+  #write-message h2 {
+    font-size: 2em;
+  }
+
+  #write-message form {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  #write-message input,
+  #write-message textarea {
+    font-size: 14px;
+  }
+
+  #write-message button {
+    font-size: 14px;
+  }
+
+  #submitted-messages div {
+    font-size: 14px;
+  }
