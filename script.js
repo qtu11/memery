@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyDGl114VDUnvUtVdl7vNd35lHEgXQIdaKs",
+    authDomain: "tuquangmemmery.firebaseapp.com",
+    projectId: "tuquangmemmery",
+    storageBucket: "tuquangmemmery.firebasestorage.app",
+    messagingSenderId: "280703846268",
+    appId: "1:280703846268:web:d4fc49d0750dcea82a46f9",
+    measurementId: "G-W04JHPDT9Z"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
   const audio = document.getElementById("background-music");
@@ -17,11 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Phát nhạc nền
+  // Phát nhạc nền tự động
   audio.volume = 0.5;
-  audio.play().catch(error => {
-    console.error("Lỗi khi phát nhạc:", error);
-  });
+  audio.muted = false;
+  const playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise
+      .then(() => {
+        console.log("Nhạc nền đã phát tự động thành công!");
+      })
+      .catch(error => {
+        console.error("Lỗi khi phát nhạc tự động:", error);
+        document.body.addEventListener("click", () => {
+          audio.play().catch(err => console.error("Lỗi khi phát nhạc sau khi nhấp:", err));
+        }, { once: true });
+      });
+  }
 
   // Điều hướng
   navLinks.forEach(link => {
@@ -34,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
           section.classList.add("active");
         }
       });
-      navMenu.classList.remove("active"); // Ẩn menu khi nhấp vào liên kết
+      navMenu.classList.remove("active");
     });
   });
 
@@ -48,22 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (name && message) {
       const newMessage = { name, message, timestamp: new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }) };
       try {
-        // Gửi dữ liệu lên server
-        const response = await fetch('/api/messages', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(newMessage)
-        });
-        if (response.ok) {
-          displayMessages(); // Làm mới danh sách tin nhắn
-          nameInput.value = "";
-          messageInput.value = "";
-        } else {
-          alert("Có lỗi xảy ra khi gửi tin nhắn!");
-        }
+        await database.ref('messages').push(newMessage);
+        displayMessages();
+        nameInput.value = "";
+        messageInput.value = "";
       } catch (error) {
         console.error("Lỗi khi gửi tin nhắn:", error);
-        alert("Không thể kết nối đến server!");
+        alert("Không thể gửi tin nhắn do lỗi kết nối!");
       }
     } else {
       alert("Vui lòng nhập đầy đủ tên và lời nhắn!");
@@ -75,18 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const submittedMessages = document.getElementById("submitted-messages");
     submittedMessages.innerHTML = "";
     try {
-      // Lấy dữ liệu từ server
-      const response = await fetch('/api/messages');
-      if (response.ok) {
-        const messages = await response.json();
-        messages.forEach(msg => {
+      const snapshot = await database.ref('messages').once('value');
+      const messages = snapshot.val();
+      if (messages) {
+        Object.values(messages).forEach(msg => {
           const messageDiv = document.createElement("div");
           messageDiv.classList.add("message-card");
           messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
           submittedMessages.appendChild(messageDiv);
         });
-      } else {
-        console.error("Lỗi khi lấy tin nhắn:", response.statusText);
       }
     } catch (error) {
       console.error("Lỗi khi lấy tin nhắn:", error);
