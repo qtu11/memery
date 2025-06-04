@@ -1,4 +1,4 @@
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -936,4 +936,3 @@ section.gallery-section {
 
   #submitted-messages div {
     font-size: 14px;
-  }
