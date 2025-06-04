@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageForm = document.getElementById("message-form");
   const writeMessageSubmitted = document.getElementById("write-message-submitted");
 
+  console.log("messageForm:", messageForm); // Debug
+  console.log("writeMessageSubmitted:", writeMessageSubmitted); // Debug
+
   // Hiển thị section #home mặc định
   if (sections.length > 0) {
     document.getElementById("home").classList.add("active");
@@ -77,6 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = nameInput.value.trim();
       const message = messageInput.value.trim();
 
+      console.log("Submitting:", { name, message }); // Debug
+
       if (!name || !message) {
         alert("Vui lòng nhập đầy đủ tên và lời nhắn!");
         return;
@@ -92,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         const result = await response.json();
+        console.log("API response:", result); // Debug
         if (result.success) {
           nameInput.value = "";
           messageInput.value = "";
@@ -112,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fetch('/api/messages')
         .then(response => response.json())
         .then(messages => {
+          console.log("Loaded messages:", messages); // Debug
           writeMessageSubmitted.innerHTML = ''; // Xóa nội dung cũ
           messages.forEach(msg => {
             const messageDiv = document.createElement("div");
