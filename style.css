@@ -140,18 +140,24 @@ button:hover {
   height: 100%;
   pointer-events: none;
   z-index: -1;
+  overflow: hidden; /* Ngăn hạt tràn ra ngoài màn hình */
 }
 
 .particle {
   position: absolute;
   background: rgba(238, 139, 208, 0.5);
   border-radius: 50%;
-  animation: fall linear infinite;
+  animation: fall linear forwards; /* Dùng forwards để animation chạy 1 lần và giữ trạng thái cuối */
 }
 
 @keyframes fall {
+  from {
+    transform: translateY(-10vh); /* Bắt đầu từ ngoài màn hình phía trên */
+    opacity: 0.5; /* Độ trong suốt ban đầu */
+  }
   to {
-    transform: translateY(100vh);
+    transform: translateY(100vh); /* Rơi xuống dưới màn hình */
+    opacity: 0; /* Mờ dần để biến mất mượt mà */
   }
 }
 
@@ -936,3 +942,4 @@ section.gallery-section {
 
   #submitted-messages div {
     font-size: 14px;
+    
