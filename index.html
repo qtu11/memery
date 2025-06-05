@@ -1125,10 +1125,101 @@
       <p id="video-modal-description">Mô tả video</p>
       <button type="button" onclick="closeVideoModal()">Đóng</button>
     </div>
-  </div>
-
-  <script src="script.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="script.js"></script>
+  <!-- Firebase Modular SDK -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+    import { getDatabase, ref, push, onChildAdded, query, limitToLast } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js';
+
+    document.addEventListener("DOMContentLoaded", () => {
+      let database;
+      try {
+        // Cấu hình Firebase
+        const firebaseConfig = {
+          apiKey: "AIzaSyDGl114VDUnvUtVdl7vNd35lHEgXQIdaKs",
+          authDomain: "tuquangmemmery.firebaseapp.com",
+          projectId: "tuquangmemmery",
+          databaseURL: "https://tuquangmemmery-default-rtdb.firebaseio.com/",
+          storageBucket: "tuquangmemmery.firebasestorage.app",
+          messagingSenderId: "280703846268",
+          appId: "1:280703846268:web:d4fc49d0750dcea82a46f9",
+          measurementId: "G-W04JHPDT9Z"
+        };
+
+        // Khởi tạo Firebase
+        const app = initializeApp(firebaseConfig);
+        database = getDatabase(app);
+        console.log("Firebase khởi tạo thành công:", database);
+      } catch (error) {
+        console.error("Lỗi khi khởi tạo Firebase:", error);
+        alert("Không thể kết nối Firebase: " + error.message);
+        return;
+      }
+
+      // Các phần tử DOM cần cho tâm thư
+      const submittedMessages = document.getElementById("submitted-messages");
+
+      // Gửi tâm thư
+      window.submitMessage = async function() {
+        if (!database) {
+          alert("Không thể gửi tin nhắn do lỗi kết nối Firebase!");
+          return;
+        }
+
+        const nameInput = document.getElementById("name");
+        const messageInput = document.getElementById("message");
+        const name = nameInput.value.trim();
+        const message = messageInput.value.trim();
+
+        if (name && message) {
+          const newMessage = {
+            name,
+            message,
+            timestamp: new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" })
+          };
+          try {
+            await push(ref(database, 'messages'), newMessage);
+            nameInput.value = "";
+            messageInput.value = "";
+            console.log("Tin nhắn đã được gửi!");
+          } catch (error) {
+            console.error("Lỗi khi gửi tin nhắn:", error);
+            alert("Không thể gửi tin nhắn do lỗi kết nối!");
+          }
+        } else {
+          alert("Vui lòng nhập đầy đủ tên và lời nhắn!");
+        }
+      };
+
+      // Hiển thị tâm thư
+      function displayMessages() {
+        if (!database || !submittedMessages) return;
+
+        const maxMessages = 50;
+        onChildAdded(query(ref(database, 'messages'), limitToLast(maxMessages)), (snapshot) => {
+          const msg = snapshot.val();
+          const messageDiv = document.createElement("div");
+          messageDiv.classList.add("message-card");
+          messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
+          messageDiv.addEventListener("click", () => showMessage(msg.name, msg.message));
+          submittedMessages.insertBefore(messageDiv, submittedMessages.firstChild);
+          if (submittedMessages.children.length > maxMessages) {
+            submittedMessages.removeChild(submittedMessages.lastChild);
+          }
+        }, (error) => {
+          console.error("Lỗi khi lấy tin nhắn:", error);
+        });
+      }
+
+      // Gọi hàm hiển thị tâm thư
+      displayMessages();
+    });
+  </script>
 </body>
 </html>
