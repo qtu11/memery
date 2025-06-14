@@ -7,16 +7,18 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <!-- Nút menu và thanh điều hướng -->
   <nav>
-    <button class="menu-toggle" type="button" aria-label="Mở menu điều hướng"><i class="fas fa-bars" aria-hidden="true"></i><span class="sr-only">Mở menu</span></button>
-    <ul class="nav-menu">
-      <li><a href="#home" class="nav-link">Trang chủ</a></li>
-      <li><a href="#gallery" class="nav-link">Thư viện ảnh/video</a></li>
-      <li><a href="#messages" class="nav-link">Lời nhắn</a></li>
-      <li><a href="#write-message" class="nav-link">Viết tâm thư</a></li>
+<button class="menu-toggle" type="button" aria-label="Mở menu điều hướng">
+    <i class="fas fa-bars" aria-hidden="true"></i><span class="sr-only">Mở menu</span></button>
+      <ul class="nav-menu">
+      <li><a href="home" class="nav-link">Trang chủ</a></li>
+      <li><a href="gallery" class="nav-link">Thư viện ảnh/video</a></li>
+      <li><a href="messages" class="nav-link">Lời nhắn</a></li>
+      <li><a href="write-message" class="nav-link">Viết tâm thư</a></li>
     </ul>
   </nav>
 
@@ -30,63 +32,756 @@
 
   <div id="particles"></div>
 
-  <section id="home" class="active">
-    <h1>Yêu mãi ngàn năm</h1>
-    <div id="members">
-      <div>Đồng Xuân An</div>
-      <div>Nguyễn Ngọc Mai Anh</div>
-      <div>Lưu Trần Gia Bảo</div>
-      <div>Ngô Phan Thái Bình</div>
-      <div>Đào Thị Huyền Diệu</div>
-      <div>Nguyễn Thị Xuân Diệu</div>
-      <div>Bùi Chí Dũng</div>
-      <div>Nguyễn Trần Khánh Duy</div>
-      <div>Lê Anh Đào</div>
-      <div>Hoàng Thị Thúy Hằng</div>
-      <div>Hoàng Gia Hân</div>
-      <div>Phùng Gia Hân</div>
-      <div>Trần Gia Huy</div>
-      <div>Nguyễn Thị Thanh Huyền</div>
-      <div>Trần Thị Ngọc Huyền</div>
-      <div>Trần Thị Thu Hường</div>
-      <div>Nguyễn Hữu Khánh</div>
-      <div>Phùng Gia Khánh</div>
-      <div>Nguyễn Thị Phương Mai</div>
-      <div>Phạm Ngọc Trúc My</div>
-      <div>Trần Khánh Ngọc</div>
-      <div>Trương Phạm Kim Nhàn</div>
-      <div>Ngô Thanh Nhân</div>
-      <div>Huỳnh Long Nhật</div>
-      <div>Dương Ngọc Nhi</div>
-      <div>Lê Ngọc Thảo Như</div>
-      <div>Nguyễn Phạm Quỳnh Như</div>
-      <div>Vương Quý Phi</div>
-      <div>Đặng Phương Quỳnh</div>
-      <div>Huỳnh Phát Tài</div>
-      <div>Hoàng Phạm Duy Tân</div>
-      <div>Trịnh Thị Kim Thanh</div>
-      <div>Bùi Phương Thảo</div>
-      <div>Nguyễn Võ Hồng Thi</div>
-      <div>Lê Ngọc Quỳnh Thư</div>
-      <div>Nguyễn Hà Minh Thư</div>
-      <div>Nguyễn Thị Anh Thư</div>
-      <div>Nguyễn Song Bích Thy</div>
-      <div>Phạm Thanh Tuyết Thy</div>
-      <div>Tạ Thủy Tiên</div>
-      <div>Đỗ Văn Đức Tình</div>
-      <div>Lê Ngọc Yến Trang</div>
-      <div>Nguyễn Ngọc Quỳnh Trâm</div>
-      <div>Lâm Huyền Trân</div>
-      <div>Nguyễn Quang Tú</div>
-      <div>Nguyễn Quang Tuấn</div>
-      <div>Nguyễn Thùy Minh Tuệ</div>
-      <div>Nguyễn Văn Tùng</div>
-      <div>Trần Chí Tùng</div>
-      <div>Trần Lê Khánh Vân</div>
-      <div>Trần Thị Hải Vy</div>
-      <div>Phạm Hải Yến</div>
+ <!-- Section thành viên -->
+  <section class="members" id="home">
+    <h1>Danh sách thành viên 12A9</h1>
+    <div class="member-grid">
+      <!-- Thành viên 1 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Đồng Xuân An">
+        </div>
+        <h3>Đồng Xuân An</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 29/10/2007<br>
+          <strong>Ưu điểm:</strong> Vui vẻ, hòa đồng<br>
+          <strong>Nhược điểm:</strong> Hay trễ giờ
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Đồng Xuân An', 'https://via.placeholder.com/120', 17, '29/10/2007', 'Vui vẻ, hòa đồng', 'Hay trễ giờ')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 2 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Nguyễn Ngọc Mai Anh">
+        </div>
+        <h3>Nguyễn Ngọc Mai Anh</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 18<br>
+          <strong>Ngày sinh:</strong> 14/04/2007<br>
+          <strong>Ưu điểm:</strong> Dịu dàng, chăm chỉ<br>
+          <strong>Nhược điểm:</strong> Nhút nhát
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Ngọc Mai Anh', 'https://via.placeholder.com/120', 18, '14/04/2007', 'Dịu dàng, chăm chỉ', 'Nhút nhát')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 3 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Lưu Trần Gia Bảo">
+        </div>
+        <h3>Lưu Trần Gia Bảo</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 11/08/2007<br>
+          <strong>Ưu điểm:</strong> Hài hước, năng động<br>
+          <strong>Nhược điểm:</strong> Lười học
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Lưu Trần Gia Bảo', 'https://via.placeholder.com/120', 17, '11/08/2007', 'Hài hước, năng động', 'Lười học')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 4 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Ngô Phan Thái Bình">
+        </div>
+        <h3>Ngô Phan Thái Bình</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 08/12/2007<br>
+          <strong>Ưu điểm:</strong> Siêng năng, chu đáo<br>
+          <strong>Nhược điểm:</strong> Quá nghiêm túc
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Ngô Phan Thái Bình', 'https://via.placeholder.com/120', 17, '08/12/2007', 'Siêng năng, chu đáo', 'Quá nghiêm túc')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 5 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Đào Thị Huyền Diệu">
+        </div>
+        <h3>Đào Thị Huyền Diệu</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 10/08/2007<br>
+          <strong>Ưu điểm:</strong> Tốt bụng, sáng tạo<br>
+          <strong>Nhược điểm:</strong> Dễ phân tâm
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Đào Thị Huyền Diệu', 'https://via.placeholder.com/120', 17, '10/08/2007', 'Tốt bụng, sáng tạo', 'Dễ phân tâm')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 6 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646363/ava3_vpmf9p.jpg" alt="Nguyễn Thị Xuân Diệu">
+        </div>
+        <h3>Nguyễn Thị Xuân Diệu</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 21/08/2007<br>
+          <strong>Ưu điểm:</strong> Hiền lành, kiên nhẫn<br>
+          <strong>Nhược điểm:</strong> Ít nói
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Thị Xuân Diệu', 'https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646363/ava3_vpmf9p.jpg', 17, '21/08/2007', 'Hiền lành, kiên nhẫn', 'Ít nói')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 7 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646716/ava4_zx8pcj.png" alt="Bùi Chí Dũng">
+        </div>
+        <h3>Bùi Chí Dũng</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 13/09/2007<br>
+          <strong>Ưu điểm:</strong> Thân thiện, dễ mến<br>
+          <strong>Nhược điểm:</strong> Hay lo lắng
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Bùi Chí Dũng', 'https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646716/ava4_zx8pcj.png', 17, '13/09/2007', 'Thân thiện, dễ mến', 'Hay lo lắng')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 8 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Nguyễn Trần Khánh Duy">
+        </div>
+        <h3>Nguyễn Trần Khánh Duy</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 30/10/2007<br>
+          <strong>Ưu điểm:</strong> Thông minh, sáng tạo<br>
+          <strong>Nhược điểm:</strong> Hay trì hoãn
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Trần Khánh Duy', 'https://via.placeholder.com/120', 17, '30/10/2007', 'Thông minh, sáng tạo', 'Hay trì hoãn')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 9 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Lê Anh Đào">
+        </div>
+        <h3>Lê Anh Đào</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 08/12/2007<br>
+          <strong>Ưu điểm:</strong> Xinh đẹp, hoạt bát<br>
+          <strong>Nhược điểm:</strong> Dễ xúc động
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Lê Anh Đào', 'https://via.placeholder.com/120', 17, '08/12/2007', 'Xinh đẹp, hoạt bát', 'Dễ xúc động')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 10 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Hoàng Thị Thúy Hằng">
+        </div>
+        <h3>Hoàng Thị Thúy Hằng</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 19<br>
+          <strong>Ngày sinh:</strong> 18/03/2006<br>
+          <strong>Ưu điểm:</strong> Kiên trì, chăm chỉ<br>
+          <strong>Nhược điểm:</strong> Cầu toàn
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Hoàng Thị Thúy Hằng', 'https://via.placeholder.com/120', 19, '18/03/2006', 'Kiên trì, chăm chỉ', 'Cầu toàn')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 11 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Hoàng Gia Hân">
+        </div>
+        <h3>Hoàng Gia Hân</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 05/12/2007<br>
+          <strong>Ưu điểm:</strong> Tốt bụng, vui vẻ<br>
+          <strong>Nhược điểm:</strong> Hay quên
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Hoàng Gia Hân', 'https://via.placeholder.com/120', 17, '05/12/2007', 'Tốt bụng, vui vẻ', 'Hay quên')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 12 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Phùng Gia Hân">
+        </div>
+        <h3>Phùng Gia Hân</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 24/11/2007<br>
+          <strong>Ưu điểm:</strong> Hòa đồng, sáng tạo<br>
+          <strong>Nhược điểm:</strong> Thích mơ mộng
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Phùng Gia Hân', 'https://via.placeholder.com/120', 17, '24/11/2007', 'Hòa đồng, sáng tạo', 'Thích mơ mộng')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 13 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Trần Gia Huy">
+        </div>
+        <h3>Trần Gia Huy</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 18<br>
+          <strong>Ngày sinh:</strong> 30/01/2007<br>
+          <strong>Ưu điểm:</strong> Tự tin, năng động<br>
+          <strong>Nhược điểm:</strong> Thích tranh luận
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Trần Gia Huy', 'https://via.placeholder.com/120', 18, '30/01/2007', 'Tự tin, năng động', 'Thích tranh luận')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 14 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749907218/ava9_uxosnz.jpg" alt="Nguyễn Thị Thanh Huyền">
+        </div>
+        <h3>Nguyễn Thị Thanh Huyền</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 11/11/2007<br>
+          <strong>Ưu điểm:</strong> Dịu dàng, tinh tế<br>
+          <strong>Nhược điểm:</strong> Hay lo lắng
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Thị Thanh Huyền', 'https://res.cloudinary.com/dnqzcnkla/image/upload/v1749907218/ava9_uxosnz.jpg', 17, '11/11/2007', 'Dịu dàng, tinh tế', 'Hay lo lắng')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 15 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Trần Thị Ngọc Huyền">
+        </div>
+        <h3>Trần Thị Ngọc Huyền</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 23/09/2007<br>
+          <strong>Ưu điểm:</strong> Hiền lành, chu đáo<br>
+          <strong>Nhược điểm:</strong> Ít chia sẻ
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Trần Thị Ngọc Huyền', 'https://via.placeholder.com/120', 17, '23/09/2007', 'Hiền lành, chu đáo', 'Ít chia sẻ')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 16 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646364/ava2_wakecb.jpg" alt="Trần Thị Thu Hường">
+        </div>
+        <h3>Trần Thị Thu Hường</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 13/10/2007<br>
+          <strong>Ưu điểm:</strong> Tự lập, kiên trì<br>
+          <strong>Nhược điểm:</strong> Quá cầu toàn
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Trần Thị Thu Hường', 'https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646364/ava2_wakecb.jpg', 17, '13/10/2007', 'Tự lập, kiên trì', 'Quá cầu toàn')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 17 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Nguyễn Hữu Khanh">
+        </div>
+        <h3>Nguyễn Hữu Khanh</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 21/09/2007<br>
+          <strong>Ưu điểm:</strong> Tích cực, lạc quan<br>
+          <strong>Nhược điểm:</strong> Hay vội vã
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Hữu Khanh', 'https://via.placeholder.com/120', 17, '21/09/2007', 'Tích cực, lạc quan', 'Hay vội vã')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 18 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Phùng Gia Khánh">
+        </div>
+        <h3>Phùng Gia Khánh</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 20<br>
+          <strong>Ngày sinh:</strong> 05/11/2005<br>
+          <strong>Ưu điểm:</strong> Chăm chỉ, đáng tin cậy<br>
+          <strong>Nhược điểm:</strong> Thích làm việc một mình
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Phùng Gia Khánh', 'https://via.placeholder.com/120', 20, '05/11/2005', 'Chăm chỉ, đáng tin cậy', 'Thích làm việc một mình')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên 19 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Nguyễn Thị Phương Mai">
+        </div>
+        <h3>Nguyễn Thị Phương Mai</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 30/09/2007<br>
+          <strong>Ưu điểm:</strong> Xinh đẹp, hiền hậu<br>
+          <strong>Nhược điểm:</strong> Dễ xúc động
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Thị Phương Mai', 'https://via.placeholder.com/120', 17, '30/09/2007', 'Xinh đẹp, hiền hậu', 'Dễ xúc động')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên t20 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Phạm Ngọc Trúc My">
+        </div>
+        <h3>Phạm Ngọc Trúc My</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 17/11/2007<br>
+          <strong>Ưu điểm:</strong> Xinh đẹp, dịu dàng<br>
+          <strong>Nhược điểm:</strong> Dễ xúc động
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Phạm Ngọc Trúc My', 'https://via.placeholder.com/120', 17, '17/11/2007', 'Xinh đẹp, dịu dàng', 'Dễ xúc động')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên t21 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Trần Khánh Ngọc">
+        </div>
+        <h3>Trần Khánh Ngọc</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 05/09/2007<br>
+          <strong>Ưu điểm:</strong> Tinh tế, chu đáo<br>
+          <strong>Nhược điểm:</strong> Hay lo lắng
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Trần Khánh Ngọc', 'https://via.placeholder.com/120', 17, '05/09/2007', 'Tinh tế, chu đáo', 'Hay lo lắng')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên t22 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Trương Phạm Kim Nhàn">
+        </div>
+        <h3>Trương Phạm Kim Nhàn</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 12/11/2007<br>
+          <strong>Ưu điểm:</strong> Kiên nhẫn, tốt bụng<br>
+          <strong>Nhược điểm:</strong> Ít nói
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Trương Phạm Kim Nhàn', 'https://via.placeholder.com/120', 17, '12/11/2007', 'Kiên nhẫn, tốt bụng', 'Ít nói')">Xem chi tiết
+</button>
+      </div>
+      <!-- Thành viên t23 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Ngô Thanh Nhân">
+        </div>
+        <h3>Ngô Thanh Nhân</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 18<br>
+          <strong>Ngày sinh:</strong> 14/12/2006<br>
+          <strong>Ưu điểm:</strong> Hài hước, năng động<br>
+          <strong>Nhược điểm:</strong> Hay quên
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Ngô Thanh Nhân', 'https://via.placeholder.com/120', 18, '14/12/2006', 'Hài hước, năng động', 'Hay quên')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên t24 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Huỳnh Long Nhật">
+        </div>
+        <h3>Huỳnh Long Nhật</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 27/09/2007<br>
+          <strong>Ưu điểm:</strong> Tự lập, mạnh mẽ<br>
+          <strong>Nhược điểm:</strong> Ít chia sẻ
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Huỳnh Long Nhật', 'https://via.placeholder.com/120', 17, '27/09/2007', 'Tự lập, mạnh mẽ', 'Ít chia sẻ')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên t25 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Dương Ngọc Nhi">
+        </div>
+        <h3>Dương Ngọc Nhi</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 11/07/2007<br>
+          <strong>Ưu điểm:</strong> Xinh đẹp, hoạt bát<br>
+          <strong>Nhược điểm:</strong> Thích kiểm soát
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Dương Ngọc Nhi', 'https://via.placeholder.com/120', 17, '11/07/2007', 'Xinh đẹp, hoạt bát', 'Thích kiểm soát')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên t26 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Lê Ngọc Thảo Như">
+        </div>
+        <h3>Lê Ngọc Thảo Như</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 20/08/2007<br>
+          <strong>Ưu điểm:</strong> Hiền lành, chăm chỉ<br>
+          <strong>Nhược điểm:</strong> Dễ phân tâm
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Lê Ngọc Thảo Như', 'https://via.placeholder.com/120', 17, '20/08/2007', 'Hiền lành, chăm chỉ', 'Dễ phân tâm')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên t27 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://via.placeholder.com/120" alt="Nguyễn Phạm Quỳnh Như">
+        </div>
+        <h3>Nguyễn Phạm Quỳnh Như</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 18<br>
+          <strong>Ngày sinh:</strong> 14/01/2007<br>
+          <strong>Ưu điểm:</strong> Tinh tế, khéo léo<br>
+          <strong>Nhược điểm:</strong> Hay lo lắng
+        </p>
+        <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Phạm Quỳnh Như', 'https://via.placeholder.com/120', 17, '14/01/2007', 'Tinh tế, khéo léo', 'Hay lo lắng')">Xem chi tiết</button>
+      </div>
+      <!-- Thành viên t28 -->
+      <div class="member-card">
+        <div class="avatar-circle">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749907248/ava8_lgypnl.jpg" alt="Vương Quý Phi">
+        </div>
+         <h3>Vương Quý Phi</h3>
+        <p class="description">
+          <strong>Tuổi:</strong> 17<br>
+          <strong>Ngày sinh:</strong> 14/11/2007<br>
+          <strong>Ưu điểm:</strong> Tự tin, năng động<br>
+          <strong>Nhược điểm:</strong> Thích tranh luận
+        </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Vương Quý Phi', 'https://res.cloudinary.com/dnqzcnkla/image/upload/v1749907248/ava8_lgypnl.jpg', 17, '14/11/2007', 'Tự tin, năng động', 'Thích tranh luận')">Xem chi tiết</button>
+   </div>
+      <!-- Thành viên t29 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Đặng Phương Quỳnh">
+      </div>
+      <h3>Đặng Phương Quỳnh</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 05/06/2007<br>
+        <strong>Ưu điểm:</strong> Hiền lành, chu đáo<br>
+        <strong>Nhược điểm:</strong> Ít nói
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Đặng Phương Quỳnh', 'https://via.placeholder.com/120', 18, '05/06/2007', 'Hiền lành, chu đáo', 'Ít nói')">Xem chi tiết</button>
     </div>
-  </section>
+    <!-- Thành viên t30 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Huỳnh Phát Tài">
+      </div>
+      <h3>Huỳnh Phát Tài</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 29/05/2007<br>
+        <strong>Ưu điểm:</strong> Hài hước, năng động<br>
+        <strong>Nhược điểm:</strong> Hài
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Huỳnh Phát Tài', 'https://via.placeholder.com/120', 18, '29/05/2007', 'Hài hước, năng động', 'Hài')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t31 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Hoàng Phạm Duy Tân">
+      </div>
+      <h3>Hoàng Phạm Duy Tân</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 18/03/2007<br>
+        <strong>Ưu điểm:</strong> Tự lập, mạnh mẽ<br>
+        <strong>Nhược điểm:</strong> Ít chia sẻ
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Hoàng Phạm Duy Tân', 'https://via.placeholder.com/120', 18, '18/03/2007', 'Tự lập, mạnh mẽ', 'Ít chia sẻ')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t32 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Trịnh Thị Kim Thanh">
+      </div>
+      <h3>Trịnh Thị Kim Thanh</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 21<br>
+        <strong>Ngày sinh:</strong> 11/06/2004<br>
+        <strong>Ưu điểm:</strong> Xinh đẹp, dịu dàng<br>
+        <strong>Nhược điểm:</strong> Dễ xúc động
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Trịnh Thị Kim Thanh', 'https://via.placeholder.com/120', 21, '11/06/2004', 'Xinh đẹp, dịu dàng', 'Dễ xúc động')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t33 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Bùi Phương Thảo">
+      </div>
+      <h3>Bùi Phương Thảo</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 07/12/2007<br>
+        <strong>Ưu điểm:</strong> Tinh tế, khéo léo<br>
+        <strong>Nhược điểm:</strong> Hay lo lắng
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Bùi Phương Thảo', 'https://via.placeholder.com/120', 17, '07/12/2007', 'Tinh tế, khéo léo', 'Hay lo lắng')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t34 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Nguyễn Võ Hồng Thi">
+      </div>
+      <h3>Nguyễn Võ Hồng Thi</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 17/05/2007<br>
+        <strong>Ưu điểm:</strong> Tự tin, nhiệt huyết<br>
+        <strong>Nhược điểm:</strong> Thích kiểm soát
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Võ Hồng Thi', 'https://via.placeholder.com/120', 17, '17/05/2007', 'Tự tin, nhiệt huyết', 'Thích kiểm soát')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t35 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Lê Ngọc Quỳnh Thư">
+      </div>
+      <h3>Lê Ngọc Quỳnh Thư</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 12/04/2007<br>
+        <strong>Ưu điểm:</strong> Hiền lành, chu đáo<br>
+        <strong>Nhược điểm:</strong> Ít nói
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Lê Ngọc Quỳnh Thư', 'https://via.placeholder.com/120', 18, '12/04/2007', 'Hiền lành, chu đáo', 'Ít nói')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t36 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Nguyễn Hà Minh Thư">
+      </div>
+      <h3>Nguyễn Hà Minh Thư</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 25/07/2007<br>
+        <strong>Ưu điểm:</strong> Tốt bụng, kiên nhẫn<br>
+        <strong>Nhược điểm:</strong> Dễ phân tâm
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Hà Minh Thư', 'https://via.placeholder.com/120', 17, '25/07/2007', 'Tốt bụng, kiên nhẫn', 'Dễ phân tâm')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t37 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Nguyễn Thị Anh Thư">
+      </div>
+      <h3>Nguyễn Thị Anh Thư</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 28/04/2006<br>
+        <strong>Ưu điểm:</strong> Xinh đẹp, hoạt bát<br>
+        <strong>Nhược điểm:</strong> Hay lo lắng
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Thị Anh Thư', 'https://via.placeholder.com/120', 18, '28/04/2006', 'Xinh đẹp, hoạt bát', 'Hay lo lắng')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t38 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Nguyễn Song Bích Thy">
+      </div>
+      <h3>Nguyễn Song Bích Thy</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 21/01/2007<br>
+        <strong>Ưu điểm:</strong> Tinh tế, khéo léo<br>
+        <strong>Nhược điểm:</strong> Dễ xúc động
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Song Bích Thy', 'https://via.placeholder.com/120', 17, '21/01/2007', 'Tinh tế, khéo léo', 'Dễ xúc động')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t39 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Phạm Thanh Tuyết Thy">
+      </div>
+      <h3>Phạm Thanh Tuyết Thy</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 27/08/2007<br>
+        <strong>Ưu điểm:</strong> Hiền lành, chu đáo<br>
+        <strong>Nhược điểm:</strong> Ít nói
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Phạm Thanh Tuyết Thy', 'https://via.placeholder.com/120', 17, '27/08/2007', 'Hiền lành, chu đáo', 'Ít nói')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t40 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Tạ Thủy Tiên">
+      </div>
+      <h3>Tạ Thủy Tiên</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 18/10/2007<br>
+        <strong>Ưu điểm:</strong> Xinh đẹp, năng động<br>
+        <strong>Nhược điểm:</strong> Thích kiểm soát
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Tạ Thủy Tiên', 'https://via.placeholder.com/120', 17, '18/10/2007', 'Xinh đẹp, năng động', 'Thích kiểm soát')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t41 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Đỗ Văn Đức Tình">
+      </div>
+      <h3>Đỗ Văn Đức Tình</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 20/02/2007<br>
+        <strong>Ưu điểm:</strong> Tự lập, mạnh mẽ<br>
+        <strong>Nhược điểm:</strong> Ít chia sẻ
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Đỗ Văn Đức Tình', 'https://via.placeholder.com/120', 18, '20/02/2007', 'Tự lập, mạnh mẽ', 'Ít chia sẻ')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t42 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Lê Ngọc Yến Trang">
+      </div>
+      <h3>Lê Ngọc Yến Trang</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 27/12/2007<br>
+        <strong>Ưu điểm:</strong> Tinh tế, khéo léo<br>
+        <strong>Nhược điểm:</strong> Hay lo lắng
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Lê Ngọc Yến Trang', 'https://via.placeholder.com/120', 17, '27/12/2007', 'Tinh tế, khéo léo', 'Hay lo lắng')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t43 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Nguyễn Ngọc Quỳnh Trâm">
+      </div>
+      <h3>Nguyễn Ngọc Quỳnh Trâm</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 18/10/2007<br>
+        <strong>Ưu điểm:</strong> Xinh đẹp, hoạt bát<br>
+        <strong>Nhược điểm:</strong> Dễ xúc động
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Ngọc Quỳnh Trâm', 'https://via.placeholder.com/120', 17, '18/10/2007', 'Xinh đẹp, hoạt bát', 'Dễ xúc động')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t44 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749647261/ava6_zsa7nl.jpg" alt="Lâm Huyền Trân">
+      </div>
+      <h3>Lâm Huyền Trân</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 21/11/2007<br>
+        <strong>Ưu điểm:</strong> Hiền lành, chu đáo<br>
+        <strong>Nhược điểm:</strong> Ít nói
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Lâm Huyền Trân', 'https://res.cloudinary.com/dnqzcnkla/image/upload/v1749647261/ava6_zsa7nl.jpg', 17, '21/11/2007', 'Hiền lành, chu đáo', 'Ít nói')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t45 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646802/avatar1_vgktah.jpg" alt="Nguyễn Quang Tú">
+      </div>
+      <h3>Nguyễn Quang Tú</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 20/02/2007<br>
+        <strong>Ưu điểm:</strong> Năng động, hài hước<br>
+        <strong>Nhược điểm:</strong> Hay quên
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Quang Tú', 'https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646802/avatar1_vgktah.jpg', 18, '20/02/2007', 'Năng động, hài hước', 'Hay quên')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t46 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749647140/ava5_vq6n6j.jpg" alt="Nguyễn Quang Tuấn">
+      </div>
+      <h3>Nguyễn Quang Tuấn</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 20/02/2007<br>
+        <strong>Ưu điểm:</strong> Tinh tế, khéo léo<br>
+        <strong>Nhược điểm:</strong> Thỉnh thoảng lơ đãng
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Quang Tuấn', 'https://res.cloudinary.com/dnqzcnkla/image/upload/v1749647140/ava5_vq6n6j.jpg', 18, '20/02/2007', 'Tinh tế, khéo léo', 'Thỉnh thoảng lơ đãng')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t47 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Nguyễn Thùy Minh Tuệ">
+      </div>
+      <h3>Nguyễn Thùy Minh Tuệ</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 13/077/2007<br>
+        <strong>Ưu điểm:</strong> Thông minh, sáng tạo<br>
+        <strong>Nhược điểm:</strong> Hay trì hoãn
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Thùy Minh Tuệ', 'https://via.placeholder.com/120', 17, '13/07/2007', 'Thông minh, sáng tạo', 'Hay trì hoãn')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t48 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Nguyễn Văn Tùng">
+      </div>
+      <h3>Nguyễn Văn Tùng</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 01/06/2007<br>
+        <strong>Ưu điểm:</strong> Thông minh, sáng tạo<br>
+        <strong>Nhược điểm:</strong> Thỉnh thoảng nhút nhát
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Nguyễn Văn Tùng', 'https://via.placeholder.com/120', 17, '01/06/2007', 'Thông minh, sáng tạo', 'Thỉnh thoảng nhút nhát')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t49 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Trần Chí Tùng">
+      </div>
+      <h3>Trần Chí Tùng</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 05/03/2007<br>
+        <strong>Ưu điểm:</strong> Tự tin, năng động<br>
+        <strong>Nhược điểm:</strong> Thích tranh luận
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Trần Chí Tùng', 'https://via.placeholder.com/120', 18, '05/03/2007', 'Tự tin, năng động', 'Thích tranh luận')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t50 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Trần Lê Khánh Vân">
+      </div>
+      <h3>Trần Lê Khánh Vân</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 18<br>
+        <strong>Ngày sinh:</strong> 05/05/2007<br>
+        <strong>Ưu điểm:</strong> Xinh đẹp, dịu dàng<br>
+        <strong>Nhược điểm:</strong> Dễ xúc động
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Trần Lê Khánh Vân', 'https://via.placeholder.com/120', 18, '05/05/2007', 'Xinh đẹp, dịu dàng', 'Dễ xúc động')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t51 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://via.placeholder.com/120" alt="Trần Thị Hải Vy">
+      </div>
+      <h3>Trần Thị Hải Vy</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 14/09/2007<br>
+        <strong>Ưu điểm:</strong> Tinh tế, khéo léo<br>
+        <strong>Nhược điểm:</strong> Hay lo lắng
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Trần Thị Hải Vy', 'https://via.placeholder.com/120', 17, '14/09/2007', 'Tinh tế, khéo léo', 'Hay lo lắng')">Xem chi tiết</button>
+    </div>
+    <!-- Thành viên t52 -->
+    <div class="member-card">
+      <div class="avatar-circle">
+        <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646364/ava1_avlmti.jpg" alt="Phạm Hải Yến">
+      </div>
+      <h3>Phạm Hải Yến</h3>
+      <p class="description">
+        <strong>Tuổi:</strong> 17<br>
+        <strong>Ngày sinh:</strong> 13/11/2007<br>
+        <strong>Ưu điểm:</strong> Hiền lành, chu đáo<br>
+        <strong>Nhược điểm:</strong> Ít nói
+      </p>
+      <button class="match-button" type="button" onclick="showMemberDetail('Phạm Hải Yến', 'https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646364/ava1_avlmti.jpg', 17, '13/11/2007', 'Hiền lành, chu đáo', 'Ít nói')">Xem chi tiết</button>
+    </div>
+    </div>
+</section>
+
+<div id="memberModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeMemberModal()">×</span>
+    <div style="width: 150px; height: 150px; margin: 0 auto;">
+      <img id="modalAvatar" src="https://via.placeholder.com/120" alt="Avatar">
+    </div>
+    <h2 id="modalName"> </h2>
+    <p id="modalAge"></p>
+    <p id="modalDob"></p>
+    <p id="modalStrength"></p>
+    <p id="modalWeakness"></p>
+  </div>
+</div>
+
 
   <section id="gallery" class="section gallery-section">
     <div class="content">
@@ -126,35 +821,35 @@
           <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865600/la3j1q1nnrrwhrqvehwm.mp4" loop muted playsinline autoplay></video>
           <div class="gallery-content">
             <h3>Video 5</h3>
-            <p>Giây phút chia tay xúc động.</p>
+            <p>Giây phút vui đùa cùng nhau.</p>
           </div>
         </div>
         <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865600/e8yyjraej5r3vn7ffgel.mp4', 'Video 6', 'Hội trại sôi động.')">
           <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865600/e8yyjraej5r3vn7ffgel.mp4" loop muted playsinline autoplay></video>
           <div class="gallery-content">
             <h3>Video 6</h3>
-            <p>Hội trại sôi động.</p>
+            <p>Chụp photobook ne.</p>
           </div>
         </div>
         <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865606/h0qkwpio9yufty4kault.mp4', 'Video 7', 'Ngày đầu tiên nhập học.')">
           <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865606/h0qkwpio9yufty4kault.mp4" loop muted playsinline autoplay></video>
           <div class="gallery-content">
             <h3>Video 7</h3>
-            <p>Ngày đầu tiên nhập học.</p>
+            <p>Ngày xả stress, ngồi lại cùng ăn uống vui vẻ.</p>
           </div>
         </div>
         <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865613/zloymmih5sls5fp5amjc.mp4', 'Video 8', 'Buổi học nhóm thú vị.')">
           <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865613/zloymmih5sls5fp5amjc.mp4" loop muted playsinline autoplay></video>
           <div class="gallery-content">
             <h3>Video 8</h3>
-            <p>Buổi học nhóm thú vị.</p>
+            <p>Thầy Hậu chắc bất ngờ lắm.</p>
           </div>
         </div>
         <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865646/u3nwsy8nqwxmhvbgtnr6.mp4', 'Video 9', 'Chụp ảnh tập thể lớp.')">
           <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865646/u3nwsy8nqwxmhvbgtnr6.mp4" loop muted playsinline autoplay></video>
           <div class="gallery-content">
             <h3>Video 9</h3>
-            <p>Chụp ảnh tập thể lớp.</p>
+            <p>Bí bật mật sẽ được hé lộ.</p>
           </div>
         </div>
         <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865613/bl1dgm9ewh7nvih6tzxu.mp4', 'Video 10', 'Tham gia hoạt động ngoại khóa.')">
@@ -353,7 +1048,7 @@
             <p>Tham gia hội thi cắm hoa.</p>
           </div>
         </div>
-        <div class="gallery-item" onclick="showVideo('vhttps://res.cloudinary.com/dnqzcnkla/video/upload/v1748865586/cpy7legy6zczahtxxmc3.mp4', 'Video 38', 'Buổi học kỹ năng giao tiếp.')">
+        <div class="gallery-item" onclick="showVideo('https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865586/cpy7legy6zczahtxxmc3.mp4', 'Video 38', 'Buổi học kỹ năng giao tiếp.')">
           <video src="https://res.cloudinary.com/dnqzcnkla/video/upload/v1748865586/cpy7legy6zczahtxxmc3.mp4" loop muted playsinline autoplay></video>
           <div class="gallery-content">
             <h3>Video 38</h3>
@@ -933,14 +1628,14 @@
           </div>
         </div>
         <div class="memory-item">
-          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862790/%E1%BA%A3nh_46_r8qdvz.jpg" alt="Ảnh 46" class="memory-img" loading="lazy">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646188/%E1%BA%A3nh_61_ktmhfn.jpg" alt="Ảnh 46" class="memory-img" loading="lazy">
           <div class="memory-content">
             <h3>Ảnh 46</h3>
             <p>Buổi văn nghệ đầy cảm xúc.</p>
           </div>
         </div>
         <div class="memory-item">
-          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1748862791/%E1%BA%A3nh_47_bn6vrb.jpg" alt="Ảnh 47" class="memory-img" loading="lazy">
+          <img src="https://res.cloudinary.com/dnqzcnkla/image/upload/v1749646365/%E1%BA%A3nh_62_sr2ylu.jpg" alt="Ảnh 47" class="memory-img" loading="lazy">
           <div class="memory-content">
             <h3>Ảnh 47</h3>
             <p>Hội trại sôi động của lớp.</p>
@@ -1043,58 +1738,58 @@
 
   <section id="messages">
     <h2>Lời nhắn</h2>
-    <div class="message-card" onclick="showMessage('Đồng Xuân An', 'Không ai có thể sống thay bạn _ hãy chọn lối đi của chính mình.')">Đồng Xuân An</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Ngọc Mai Anh', 'Nếu không biết mình đang đi đâu, mọi con đường đều là lạc lối.')">Nguyễn Ngọc Mai Anh</div>
-    <div class="message-card" onclick="showMessage('Lưu Trần Gia Bảo', 'Thành công không phải đích đến, mà là một lối sống.')">Lưu Trần Gia Bảo</div>
-    <div class="message-card" onclick="showMessage('Ngô Phan Thái Bình', 'Cuộc sống không đòi hỏi bạn phải hoàn hảo, chỉ cần bạn chân thành.')">Ngô Phan Thái Bình</div>
-    <div class="message-card" onclick="showMessage('Đào Thị Huyền Diệu', 'Bạn không cần phải giỏi mới bắt đầu, nhưng phải bắt đầu mới giỏi được.')">Đào Thị Huyền Diệu</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Thị Xuân Diệu', 'Người thành công là người không bỏ cuộc khi mọi thứ trở nên khó khăn.')">Nguyễn Thị Xuân Diệu</div>
-    <div class="message-card" onclick="showMessage('Bùi Chí Dũng', 'Sự bền bỉ đánh bại tài năng khi tài năng không chịu nỗ lực.')">Bùi Chí Dũng</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Trần Khánh Duy', 'Đi chậm cũng được, miễn là đừng đứng yên.')">Nguyễn Trần Khánh Duy</div>
-    <div class="message-card" onclick="showMessage('Lê Anh Đào', 'Hãy là người làm chứ đừng chỉ là người mơ.')">Lê Anh Đào</div>
-    <div class="message-card" onclick="showMessage('Hoàng Thị Thúy Hằng', 'Nếu hôm nay mệt, nghỉ ngơi _ nhưng đừng quay đầu.')">Hoàng Thị Thúy Hằng</div>
-    <div class="message-card" onclick="showMessage('Hoàng Gia Hân', 'Bạn được phép yếu đuối, nhưng đừng để nó định nghĩa bạn.')">Hoàng Gia Hân</div>
-    <div class="message-card" onclick="showMessage('Phùng Gia Hân', 'Không ai có thể làm bạn tổn thương nếu bạn không cho phép.')">Phùng Gia Hân</div>
-    <div class="message-card" onclick="showMessage('Trần Gia Huy', 'Hạnh phúc là lựa chọn, không phải kết quả.')">Trần Gia Huy</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Thị Thanh Huyền', 'Đừng cho phép ai mở cửa trái tim khi đang là người sợ bị tổn thương.')">Nguyễn Thị Thanh Huyền</div>
-    <div class="message-card" onclick="showMessage('Trần Thị Ngọc Huyền', 'Tự yêu bản thân không phải là ích kỷ, đó là nền tảng của mọi tình yêu.')">Trần Thị Ngọc Huyền</div>
-    <div class="message-card" onclick="showMessage('Trần Thị Thu Hường', 'Người thật sự đáng trân trọng là người ở lại khi cả thế giới quay lưng.')">Trần Thị Thu Hường</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Hữu Khánh', 'Ước mơ không dành cho người chờ đợi _ mà cho người hành động.')">Nguyễn Hữu Khánh</div>
-    <div class="message-card" onclick="showMessage('Phùng Gia Khánh', 'Hãy sống cuộc đời khiến bạn tự hào khi kể lại.')">Phùng Gia Khánh</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Thị Phương Mai', 'Bạn mạnh mẽ hơn bạn nghĩ.')">Nguyễn Thị Phương Mai</div>
-    <div class="message-card" onclick="showMessage('Phạm Ngọc Trúc My', 'Đừng đánh giá hành trình của mình dựa trên chương truyện của người khác.')">Phạm Ngọc Trúc My</div>
-    <div class="message-card" onclick="showMessage('Trần Khánh Ngọc', 'Hãy là phiên bản tốt nhất của chính mình _ không cần sao chép ai cả.')">Trần Khánh Ngọc</div>
-    <div class="message-card" onclick="showMessage('Trương Phạm Kim Nhàn', 'Cuộc sống không phải luôn dễ dàng, nhưng luôn đáng sống.')">Trương Phạm Kim Nhàn</div>
-    <div class="message-card" onclick="showMessage('Ngô Thanh Nhân', 'Nếu bạn không theo đuổi ước mơ của mình, bạn sẽ làm việc cho ước mơ của người khác')">Ngô Thanh Nhân</div>
-    <div class="message-card" onclick="showMessage('Huỳnh Long Nhật', 'Mọi điều vĩ đại đều bắt đầu từ một ý tưởng nhỏ.')">Huỳnh Long Nhật</div>
-    <div class="message-card" onclick="showMessage('Dương Ngọc Nhi', 'Hãy ngủ đủ giấc và uống nhiều nước. Cười nhiều hơn một chút, lo lắng ít đi một chút.')">Dương Ngọc Nhi</div>
-    <div class="message-card" onclick="showMessage('Lê Ngọc Thảo Như', 'Khi bạn ngẩng đầu nhìn lại, bạn sẽ thấy mình đã đi rất xa.')">Lê Ngọc Thảo Như</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Phạm Quỳnh Như', 'Sống chậm lại, hít thở sâu, và tận hưởng khoảnh khắc này.')">Nguyễn Phạm Quỳnh Như</div>
-    <div class="message-card" onclick="showMessage('Vương Quý Phi', 'Hãy học cách biết ơn _ mọi điều đều có lý do.')">Vương Quý Phi</div>
-    <div class="message-card" onclick="showMessage('Đặng Phương Quỳnh', 'Mỗi hành trình đều có giá trị, đừng so sánh với người khác.')">Đặng Phương Quỳnh</div>
-    <div class="message-card" onclick="showMessage('Huỳnh Phát Tài', 'Càng trưởng thành, càng phải biết cách dịu dàng với bản thân.')">Huỳnh Phát Tài</div>
-    <div class="message-card" onclick="showMessage('Hoàng Phạm Duy Tân', 'Mỗi nỗ lực dù nhỏ cũng đang thay đổi bạn từng ngày.')">Hoàng Phạm Duy Tân</div>
-    <div class="message-card" onclick="showMessage('Trịnh Thị Kim Thanh', 'Không ai hiểu mình hơn chính mình _ hãy lắng nghe nội tâm.')">Trịnh Thị Kim Thanh</div>
-    <div class="message-card" onclick="showMessage('Bùi Phương Thảo', 'Học cách tha thứ cho bản thân vì những sai lầm cũ.')">Bùi Phương Thảo</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Võ Hồng Thi', 'Dịu dàng một chút đừng để tiếng ồn bên ngoài lấn át tiếng nói bên trong.')">Nguyễn Võ Hồng Thi</div>
-    <div class="message-card" onclick="showMessage('Lê Ngọc Quỳnh Thư', 'Tình bạn thật sự không đòi hỏi phải nhắn mỗi ngày, chỉ cần luôn hiểu nhau.')">Lê Ngọc Quỳnh Thư</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Hà Minh Thư', 'Hãy ở bên người khiến bạn trở thành phiên bản tốt hơn của chính mình.')">Nguyễn Hà Minh Thư</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Thị Anh Thư', 'Trưởng thành không phải là biết tất cả, mà là biết im lặng đúng lúc')">Nguyễn Thị Anh Thư</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Song Bích Thy', 'Mỗi người đều mang trong mình một nỗi buồn không tên _ hãy sống tử tế.')">Nguyễn Song Bích Thy</div>
-    <div class="message-card" onclick="showMessage('Phạm Thanh Tuyết Thy', 'Luôn có ánh sáng ở cuối đường hầm _ đừng tắt đèn trong lòng.')">Phạm Thanh Tuyết Thy</div>
-    <div class="message-card" onclick="showMessage('Tạ Thủy Tiên', 'Hãy yêu như chưa từng tổn thương, nhưng đừng quên bài học cũ.')">Tạ Thủy Tiên</div>
-    <div class="message-card" onclick="showMessage('Đỗ Văn Đức Tình', 'Cười với cuộc đời _ nó sẽ cười lại với bạn.')">Đỗ Văn Đức Tình</div>
-    <div class="message-card" onclick="showMessage('Lê Ngọc Yến Trang', 'Đôi khi điều quý giá nhất là khoảng lặng giữa hai tiếng thở dài.')">Lê Ngọc Yến Trang</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Ngọc Quỳnh Trâm', 'Thương ai đó _ hãy nói ra, đừng chờ muộn màng.')">Nguyễn Ngọc Quỳnh Trâm</div>
-    <div class="message-card" onclick="showMessage('Lâm Huyền Trân', 'Kỷ luật là cầu nối giữa mục tiêu và hiện thực')">Lâm Huyền Trân</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Quang Tú', 'Biết mình là ai?, Biết mình muốn gì?, Biết mình cần gì? đó đã là một nửa thành công.')">Nguyễn Quang Tú</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Quang Tuấn', 'Tương lai sẽ biết ơn bạn của hôm nay _ đừng từ bỏ!')">Nguyễn Quang Tuấn</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Thùy Minh Tuệ', 'Hãy chấp nhận bản thân như một bản nhạc chưa hoàn chỉnh.')">Nguyễn Thùy Minh Tuệ</div>
-    <div class="message-card" onclick="showMessage('Nguyễn Văn Tùng', 'Hãy tử tế _ bạn không biết người khác đang trải qua điều gì.')">Nguyễn Văn Tùng</div>
-    <div class="message-card" onclick="showMessage('Trần Chí Tùng', 'Không ai cứu mình ngoài chính mình _ học cách đứng dậy.')">Trần Chí Tùng</div>
-    <div class="message-card" onclick="showMessage('Trần Lê Khánh Vân', 'Không cần ai hoàn hảo, chỉ cần ai đó thật lòng.')">Trần Lê Khánh Vân</div>
-    <div class="message-card" onclick="showMessage('Trần Thị Hải Vy', 'Tình yêu bắt đầu bằng sự lắng nghe, thấu hiểu và kể cả lòng bao dung.')">Trần Thị Hải Vy</div>
-    <div class="message-card" onclick="showMessage('Phạm Hải Yến', 'Không ai là bạn tốt với bạn hơn chính bạn.')">Phạm Hải Yến</div>
+    <div class="message-card" onclick="showMessage('Đồng Xuân An', '     Tiếng trống trường vang lên, không còn gọi ta vào lớp nữa, mà là khép lại những tháng ngày áo trắng hồn nhiên. Cảm giác trống rỗng len lỏi, tim như có gì nghẹn lại. Nhìn bạn bè lần cuối trong bộ đồng phục, ta chợt sợ mai này không còn được vô tư cười đùa bên nhau nữa. Thầy cô bước đi, bóng dáng như dài ra trên sân nắng chiều - người đưa đò đã hoàn tất một chuyến. Chỉ mong có thể níu lại chút thời gian, chỉ mong những kỷ niệm đừng trôi quá nhanh...')">Đồng Xuân An</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Ngọc Mai Anh', '     Tớ đã viết cho cậu biết bao lá thư, nhưng chưa từng gửi. Có lẽ tớ sợ, sợ khi mọi thứ phơi bày ra sẽ khiến chúng ta không thể cười tự nhiên nữa. Mỗi lần cậu mượn bút, cười với tớ hay đơn giản chỉ ngồi gần trong giờ học, trái tim tớ lại run lên. Cảm giác ấy đẹp lắm, nhưng cũng mong manh. Tuổi học trò mà, tình cảm trong trẻo nhưng không đủ can đảm để giữ lấy. Lá thư vẫn nằm yên trong ngăn bàn, cùng những kỷ niệm chưa kịp nói thành lời...')">Nguyễn Ngọc Mai Anh</div>
+    <div class="message-card" onclick="showMessage('Lưu Trần Gia Bảo', '    Dạo này đến lớp, ta hay ngồi lặng thinh nhìn khoảng trống trên những dãy bàn. Có bạn đã nghỉ, có bạn đang ôn thi ở xa, có người đã chọn lối đi riêng. Lớp học bỗng lặng hơn, tiếng nói cười cũng không còn như trước. Những chỗ trống ấy không chỉ là chiếc ghế vắng, mà còn là một phần thanh xuân đang dần rời xa. Chúng ta đều lớn, đều phải đi tiếp, nhưng sao vẫn mong mọi người mãi ở đây, mãi là tập thể 12A9 thân quen thuở nào…')">Lưu Trần Gia Bảo</div>
+    <div class="message-card" onclick="showMessage('Ngô Phan Thái Bình', '      Chẳng hiểu sao tớ lại nhớ những buổi chiều ở lại trực nhật đến thế. Cái lớp ồn ào ban sáng, chiều về chỉ còn lại vài đứa loay hoay quét lớp, lau bảng. Mùi bụi phấn, tiếng chổi quét lạo xạo, tiếng cười vang trong ánh nắng cuối ngày - những điều nhỏ bé ấy làm nên thanh xuân. Chúng ta từng tranh nhau lau bảng, từng lén viết lên bảng những dòng nhắn gửi nhau. Giờ nghĩ lại, thấy ấm áp đến lạ. Giá như những buổi chiều ấy có thể kéo dài thêm một chút…')">Ngô Phan Thái Bình</div>
+    <div class="message-card" onclick="showMessage('Đào Thị Huyền Diệu', '       Thầy vẫn vậy - dáng cao gầy, giọng trầm và ánh mắt ấm. Có lần thầy giảng bài, chợt dừng lại nhìn cả lớp rồi mỉm cười buồn: “Mấy đứa sắp lớn hết rồi nhỉ?” Khoảnh khắc đó khiến ta nhận ra: thời gian đang lặng lẽ rời đi. Những lời nhắc nhở, những lần mắng yêu, những buổi kiểm tra bất ngờ - tất cả là yêu thương thầy dành cho lũ học trò bướng bỉnh. Cảm ơn thầy, vì đã ở bên tụi em trong những năm tháng ngây ngô nhất.')">Đào Thị Huyền Diệu</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Thị Xuân Diệu', '     Tờ giấy thi cuối cùng được nộp lên, cả lớp thở phào mà tim lại nghèn nghẹn. Không còn bài kiểm tra nào nữa đồng nghĩa không còn lần nào cùng nhau hồi hộp, không còn tiếng than vãn “sao ra đề khó thế!”. Bỗng dưng thấy tiếc, dù từng mong kiểm tra nhanh kết thúc. Có những điều, chỉ khi sắp mất đi ta mới kịp nhận ra, rằng nó đã từng gắn bó với mình nhiều đến thế.')">Nguyễn Thị Xuân Diệu</div>
+    <div class="message-card" onclick="showMessage('Bùi Chí Dũng', '      Cơn mưa bất chợt đổ xuống trong giờ ra chơi, ai nấy đều vội vã chạy tránh. Vậy mà vẫn có đứa đứng dưới mái hiên, ngẩn người nhìn từng giọt mưa rơi. Mưa hôm nay giống như những kỷ niệm: bất chợt, dai dẳng, và thấm sâu vào lòng. Có ai đã từng ngồi dưới tán phượng nghe mưa, rồi bỗng thèm quay lại những ngày mưa ướt áo mà không lo âu chuyện đời?')">Bùi Chí Dũng</div>
+    <div class="message-card" onclick="showMessage('/Nguyễn Trần Khánh Duy', '       Dòng người xếp hàng ở căn tin vẫn đông như mọi khi, nhưng hôm nay lại khác. Tớ biết, đây là lần cuối cùng mình ăn ở đây - chỗ từng giành nhau từng suất bánh mì, từng cốc trà đá. Mỗi góc trong căn tin đều có dấu vết của đám bạn tinh nghịch, của tiếng cười, của mấy lần mượn tiền chưa kịp trả. Bữa ăn cuối cùng ấy không còn ngon như xưa, mà thấm đẫm mùi vị chia xa.')">Nguyễn Trần Khánh Duy</div>
+    <div class="message-card" onclick="showMessage('Lê Anh Đào', '       Cây phượng ấy đã đứng đó từ năm đầu cấp, giờ lại đỏ rực như lời chia tay không thành tiếng. Những cánh hoa rơi như từng mảnh thời gian, từng khoảnh khắc chúng ta bên nhau. Tớ đã khắc tên tụi mình lên thân cây, nơi không ai nhìn thấy, như một lời nhắn rằng: thanh xuân này có cậu. Rồi phượng sẽ tàn, hè sẽ qua, nhưng có một điều sẽ mãi còn: kỷ niệm tuổi học trò.')">Lê Anh Đào</div>
+    <div class="message-card" onclick="showMessage('Hoàng Thị Thúy Hằng', '        Thầy không dạy bằng giáo án, mà bằng chính cách sống. Có lần cả lớp phạm lỗi, thầy không la mà chỉ kể chuyện thời thầy đi học. Giọng thầy chậm rãi, ánh mắt xa xăm. Từng lời như thấm vào tim. Lúc ấy ta hiểu: trưởng thành không chỉ là điểm số, mà là biết nhận lỗi, biết đứng lên. Bài học ấy không có trong sách, nhưng sẽ theo ta suốt đời.')">Hoàng Thị Thúy Hằng</div>
+    <div class="message-card" onclick="showMessage('Hoàng Gia Hân', '      Góc lớp nơi bàn cuối từng là “đại bản doanh” của tụi mình. Nơi đó từng cất tiếng cười, từng giấu giọt nước mắt. Bây giờ, mỗi lần quay lại nhìn, lòng lại chùng xuống. Bàn ghế vẫn đó, nhưng người đã khác. Chúng ta không còn tranh nhau chỗ ngồi, không còn viết những mẩu giấy vụn chuyền tay nhau. Góc lớp ấy, lặng lẽ giữ những ký ức không ai hay biết.')">Hoàng Gia Hân</div>
+    <div class="message-card" onclick="showMessage('Phùng Gia Hân', '   Cuốn sổ lưu bút mở ra, trang đầu tiên vẫn trắng tinh. Ai cũng chần chừ, chẳng ai biết viết gì để đủ đầy, để không hối tiếc. Viết về bạn, về thầy, về những trò tinh nghịch, viết về giấc mơ sau cánh cổng trường. Có người cười, có người rơi nước mắt. Có dòng chữ viết vội, nguệch ngoạc, nhưng chứa trọn cả một thời tuổi trẻ.')">Phùng Gia Hân</div>
+    <div class="message-card" onclick="showMessage('Trần Gia Huy', '   Lần trốn học duy nhất của tụi mình không phải để chơi, mà là để ngồi với nhau ở bờ kè, nói về tương lai. Đứa muốn làm bác sĩ, đứa muốn đi nước ngoài, đứa muốn… mãi bên nhau như bây giờ. Trốn học hôm ấy không bị ai phát hiện, nhưng nó in đậm trong tim như một lần “nổi loạn” đẹp nhất. Chúng ta đã dám rời lớp học một chút, để học về tình bạn và ước mơ.')">Trần Gia Huy</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Thị Thanh Huyền', '    Lá thư báo điểm rơi vào tay run run. Có người cười như vỡ òa, có người im lặng nhìn xuống đất. Đằng sau mỗi con số là bao tháng ngày thức khuya, bao lần rơi nước mắt. Có bạn chưa đạt được như mong đợi, nhưng đừng buồn - tuổi học trò không chỉ đo bằng điểm số. Chúng ta đã cố gắng hết mình, và điều đó xứng đáng được trân trọng hơn bất kỳ con số nào.')">Nguyễn Thị Thanh Huyền</div>
+    <div class="message-card" onclick="showMessage('Trần Thị Ngọc Huyền', '    Chiếc áo đồng phục nay đã bạc màu, cổ áo sờn chỉ, nhưng tớ không nỡ bỏ đi. Nó từng theo tớ suốt ba năm, từng thấm mồ hôi mùa thi, từng nhuốm nước mắt ngày chia tay. Mỗi vết mực, mỗi chỗ rách là một kỷ niệm. Có người chê nó xấu, nhưng với tớ, đó là tấm áo đẹp nhất, vì nó chứa cả một thời thanh xuân rực rỡ.')">Trần Thị Ngọc Huyền</div>
+    <div class="message-card" onclick="showMessage('Trần Thị Thu Hường', ' Ai đó trong lớp đã lặng lẽ vẽ một bức tranh. Trong đó là bảng đen, bàn ghế, thầy cô và cả những gương mặt thân quen. Bức tranh không đẹp như hoạ sĩ vẽ, nhưng từng đường nét lại khiến ta xúc động. Bởi mỗi màu sắc là một phần ký ức, mỗi gương mặt là một nỗi nhớ. Có thể ta sẽ xa nhau, nhưng bức tranh ấy - và quãng đời ấy - sẽ mãi là một phần trong tim mỗi người.')">Trần Thị Thu Hường</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Hữu Khanh', '    Có lần tớ hỏi cậu: “Cậu có biết lúc cậu cười, mắt cậu cong như vầng trăng không?” Cậu chỉ cười bảo: “Vậy à?” Và tớ thì không nói gì thêm. Bởi vì tớ biết, mình thích nụ cười ấy từ lúc nào chẳng hay. Mỗi lần lớp mệt mỏi vì bài vở, chỉ cần thấy ánh mắt cậu, thấy nụ cười ấy, mọi mỏi mệt đều tan biến. Có lẽ, cậu là thanh xuân dịu dàng nhất mà tớ từng gặp.')">Nguyễn Hữu Khanh</div>
+    <div class="message-card" onclick="showMessage('Phùng Gia Khánh', '     Thanh xuân tuổi học trò cấp 3 là khoảng trời đẹp đẽ nhất đời người. Đó là nơi ta cất giữ những nụ cười vô tư, những lần trốn tiết để ăn quà vặt, hay những ánh mắt bối rối đầu đời. Những tiết học đôi khi dài lê thê, những lần bị gọi lên bảng run rẩy trả lời, tất cả đều hóa thành kỷ niệm. Tuổi 17, 18 - độ tuổi chưa đủ lớn để gọi là trưởng thành nhưng cũng không còn quá trẻ con. Ở nơi ấy, tình bạn, tình thầy trò, và cả những rung động đầu đời đều được vẽ nên bằng màu sắc trong sáng. Dù mai này có đi đâu, làm gì, ta cũng sẽ nhớ mãi một thời áo trắng ngây thơ, đầy ước mơ và khát vọng.')">Phùng Gia Khánh</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Thị Phương Mai', '    Thanh xuân cấp 3 là những ngày tháng sống hết mình với ước mơ. Là những buổi học thêm tối mịt vẫn cười vang cùng bạn, là những lần thi thử căng thẳng mà vẫn hẹn nhau ăn chè sau đó. Dù áp lực thi cử đè nặng, nhưng đó là khoảng thời gian chúng ta sống chân thành nhất. Những lời động viên từ bạn bè, những ánh mắt lo lắng từ thầy cô, tất cả là động lực để bước tiếp. Có lẽ sau này khi trưởng thành, ta sẽ không còn có cơ hội sống trọn vẹn như những ngày ấy - vừa áp lực, vừa vui, vừa hồi hộp, vừa mơ mộng. Và rồi, khi chia xa, ta mới chợt hiểu: thanh xuân là quãng đời ngắn ngủi, nhưng để thương nhớ một đời.')">Nguyễn Thị Phương Mai</div>
+    <div class="message-card" onclick="showMessage('Phạm Ngọc Trúc My', '    Tuổi học trò cấp 3 giống như một thước phim quay chậm. Mỗi ngày đến trường là một ngày đáng nhớ, dù là buồn hay vui. Có hôm cười nghiêng ngả vì trò đùa của đám bạn, có hôm khóc thầm vì điểm kiểm tra thấp. Nhưng tất cả đều chân thật, đều là thanh xuân không thể quay lại. Áo trắng, bảng đen, ghế đá sân trường - những điều bình dị ấy lại in sâu trong tâm trí. Chúng ta từng đứng dưới mưa, từng nắm tay nhau hứa hẹn một tương lai rực rỡ. Và rồi, khi thời gian trôi qua, ký ức ấy vẫn sống mãi trong tim, nhắc nhớ về một thời học trò - vụng về nhưng chan chứa yêu thương.')">Phạm Ngọc Trúc My</div>
+    <div class="message-card" onclick="showMessage('Trần Khánh Ngọc', '       Thanh xuân cấp 3 là những mối tình ngây ngô chưa kịp gọi tên. Là ánh mắt bối rối khi lỡ chạm ánh mắt ai đó trong lớp, là những lần tim đập rộn ràng chỉ vì một nụ cười. Tình cảm tuổi học trò không ồn ào, không hứa hẹn dài lâu, nhưng đủ để ta nhớ mãi. Đôi khi chỉ là việc ngồi cùng bàn, chia nhau cây kẹo, hay mượn vở chép bài - cũng khiến trái tim bồi hồi. Dù sau này mỗi người một ngả, nhưng trong lòng ta vẫn lưu giữ bóng hình người ấy - mối tình đầu nhẹ nhàng như mây trời. Bởi tuổi trẻ là để yêu, để thương, để giữ mãi một cảm xúc đẹp đẽ mang tên “học trò”.')">Trần Khánh Ngọc</div>
+    <div class="message-card" onclick="showMessage('Trương Phạm Kim Nhàn', '     Nếu được quay về, tôi muốn sống lại những ngày tháng cấp 3 thêm một lần nữa. Đó là khoảng thời gian tôi cười nhiều nhất, khóc cũng thật lòng nhất. Là nơi tôi gặp những người bạn tri kỷ, cùng học cùng chơi, cùng ôn thi suốt đêm. Có khi giận nhau vì những điều vụn vặt, nhưng rồi lại dễ dàng tha thứ. Mỗi kỳ thi là một cột mốc, mỗi buổi chia tay là một lần nghẹn ngào. Có lẽ vì thế mà người ta vẫn bảo: “Thanh xuân là thứ đẹp đẽ nhưng mong manh nhất.” Tôi đã sống trọn từng khoảnh khắc ấy, và sẽ luôn trân trọng những năm tháng rực rỡ ấy - thời cấp 3 tươi đẹp và ngập tràn hy vọng.')">Trương Phạm Kim Nhàn</div>
+    <div class="message-card" onclick="showMessage('Ngô Thanh Nhân', '     Thanh xuân học trò là những giờ ra chơi đầy tiếng cười. Chỉ 15 phút ngắn ngủi giữa các tiết học thôi nhưng đủ để kể hết bao chuyện vui buồn, đủ để rượt đuổi, đá cầu, hay đơn giản là ngồi tựa vai nhau dưới gốc phượng già. Có những lúc chán học, ra sân nằm dài nhìn mây trôi, cảm thấy thế giới thật yên bình. Thời ấy chẳng cần điện thoại hay mạng xã hội, chỉ cần có nhau là đủ. Những niềm vui giản dị ấy giờ trở thành báu vật trong ký ức. Ra chơi không chỉ là nghỉ ngơi, mà là thời khắc nuôi dưỡng tình bạn, gắn kết những tâm hồn trẻ trung, vô tư. Một thời mà chúng ta sống đúng với tuổi, không lo toan, không giả vờ.')">Ngô Thanh Nhân</div>
+    <div class="message-card" onclick="showMessage('Huỳnh Long Nhật', '    Cấp 3 là khoảng thời gian chúng ta phải học cách đối mặt với áp lực. Từ những kỳ thi giữa kỳ, cuối kỳ, cho đến áp lực từ kỳ thi đại học. Mỗi ngày đều là những cuộc chạy đua với thời gian, học thêm, luyện đề, thức khuya. Nhưng giữa những áp lực đó, ta lại nhận ra sự cố gắng của mình có ý nghĩa. Đó là lần đầu ta nghiêm túc đặt câu hỏi: “Mình muốn trở thành ai?” Những giọt mồ hôi, nước mắt, những thất bại nhỏ - tất cả đều là hành trang vững chắc cho tương lai. Thanh xuân không chỉ có màu hồng, mà còn có cả mồ hôi, nỗ lực và kiên trì. Nhưng chính vì thế, nó mới trở nên đáng nhớ và đáng quý biết bao.')">Huỳnh Long Nhật</div>
+    <div class="message-card" onclick="showMessage('Dương Ngọc Nhi', '  Có ai chưa từng ngắm hoa phượng nở mà lòng chợt bâng khuâng? Phượng nở báo hiệu mùa chia tay, mùa thi, mùa trưởng thành. Cấp 3 gắn với những cánh phượng đỏ rực, với ve kêu râm ran trong sân trường đầy nắng. Những cánh hoa ép vào trang vở, gửi gắm bao điều chưa nói. Dưới tán phượng ấy, biết bao cuộc trò chuyện thầm kín, những lời hứa hẹn, những giọt nước mắt ngày cuối cùng bên nhau. Mỗi mùa hè đi qua là một lần lớn lên, nhưng cũng là một lần mất đi điều gì đó. Và phượng, như một chứng nhân im lặng của thanh xuân, vẫn rực rỡ nở mỗi năm, nhắc ta về những năm tháng không thể nào quên.')">Dương Ngọc Nhi</div>
+    <div class="message-card" onclick="showMessage('Lê Ngọc Thảo Như', '   Tình bạn thời cấp 3 là món quà vô giá. Đó không phải là những mối quan hệ xã giao, mà là tình bạn chân thành, dám cho đi không cần nhận lại. Là những người cùng khóc, cùng cười, cùng trải qua bao thăng trầm của tuổi trẻ. Là đứa bạn giận dỗi vài ngày rồi lại làm hòa vì nhớ nhau quá. Là đứa sẵn sàng chép bài hộ, nhường ghế đá, hay chờ nhau về mỗi buổi tan học. Có thể sau này ta sẽ gặp nhiều người mới, kết bạn nhiều nơi, nhưng không ai có thể thay thế những người bạn đã cùng ta đi qua thanh xuân ấy - một cách tự nhiên, trong trẻo và đầy thương mến.')">Lê Ngọc Thảo Như</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Phạm Quỳnh Như', '  Tuổi học trò là những buổi sinh hoạt lớp đầy màu sắc. Có lớp nghiêm túc, có lớp náo loạn, nhưng tất cả đều mang nét riêng không thể lẫn. Những lần tổ chức sinh nhật cho bạn, diễn văn nghệ, chuẩn bị 20/11, làm báo tường - mỗi kỷ niệm đều gắn với một khoảng trời rộn ràng tiếng cười. Có khi bất đồng, có khi giận hờn, nhưng sau tất cả, tình cảm tập thể vẫn là điều đọng lại. Cấp 3 dạy ta cách làm việc nhóm, cách yêu thương và quan tâm đến người khác. Chính những sinh hoạt lớp đời thường ấy lại là chất liệu nuôi dưỡng tình cảm gắn bó mà ta không thể tìm lại lần thứ hai.')">Nguyễn Phạm Quỳnh Như</div>
+    <div class="message-card" onclick="showMessage('Vương Quý Phi', ' Những buổi học cuối cùng luôn khiến tim người ta nghẹn lại. Lúc ấy, dù muốn hay không, ta vẫn phải đối diện với sự chia tay. Nhìn bạn bè ký tên lên áo, trao nhau những lời chúc, mà lòng cứ rưng rưng. Đứa cười thật to để che giấu nước mắt, đứa ngồi lặng thinh không nói được câu nào. Có lẽ phải đến khi xa nhau thật rồi, ta mới hiểu hết giá trị của từng khoảnh khắc. Những ngày cuối cấp là dịp để ta trân trọng, để nói lời cảm ơn và xin lỗi. Và cũng là lúc nhận ra: mỗi con đường sẽ dẫn đến một chân trời riêng, nhưng ký ức về những ngày bên nhau - sẽ mãi còn trong tim.')">Vương Quý Phi</div>
+    <div class="message-card" onclick="showMessage('Đặng Phương Quỳnh', ' Thanh xuân học trò là khi chỉ cần một lời khen từ thầy cô cũng đủ khiến ta vui suốt cả ngày. Là khi bị mắng nhưng vẫn âm thầm cố gắng để không làm thầy cô buồn. Tình cảm thầy trò cấp 3 không còn đơn thuần như tiểu học, mà dần trở thành sự gắn bó sâu sắc. Họ không chỉ dạy kiến thức, mà còn dạy ta cách sống, cách đứng lên sau vấp ngã. Có những câu nói của thầy cô ta sẽ nhớ suốt đời, vì nó chạm vào trái tim non trẻ của ta đúng lúc nhất. Có thể khi trưởng thành, ta không còn gặp lại họ, nhưng bóng dáng thầy cô vẫn mãi ở đó - như người dẫn đường thầm lặng, đầy yêu thương.')">Đặng Phương Quỳnh</div>
+    <div class="message-card" onclick="showMessage('Huỳnh Phát Tài', '     Sáng sớm đến trường là khoảnh khắc đẹp của tuổi học trò. Con đường quen thuộc, hàng cây rợp bóng, tiếng chim líu lo hòa vào tiếng cười nói. Những buổi sớm ấy, ai cũng mang trong mình sự háo hức, dù đôi mắt còn ngái ngủ. Có khi lén ăn sáng trong lớp, có khi tranh thủ ôn bài trước tiết kiểm tra. Mỗi buổi sáng là một bắt đầu mới, mang theo niềm hy vọng nhỏ bé của tuổi trẻ. Những ngày đi học tưởng như bình thường, nhưng rồi sau này, ta lại khao khát được quay về. Để một lần nữa đi giữa sân trường trong cái nắng dịu nhẹ, để thấy mình vẫn còn trẻ, vẫn còn mộng mơ.')">Huỳnh Phát Tài</div>
+    <div class="message-card" onclick="showMessage('Hoàng Phạm Duy Tân', '  Giờ kiểm tra luôn là một “trận chiến” không thể thiếu trong thanh xuân cấp 3. Những ánh mắt lo âu, những cái liếc nhìn đáp án đầy hồi hộp, hay tiếng giấy sột soạt vang lên trong không khí im lặng căng thẳng. Có đứa làm xong trước, tự tin ra về; có đứa ngồi cắn bút đến phút cuối cùng. Nhưng rồi sau khi chuông reo, mọi lo lắng tan biến, thay vào đó là tiếng cười bàn tán: “Câu đó ra rồi! Tao sai rồi!”... Những buổi kiểm tra ấy giúp ta hiểu giá trị của sự chuẩn bị, của nỗ lực. Và trên hết, nó dạy ta bài học về việc chấp nhận kết quả - dù tốt hay xấu - với sự trưởng thành.')">Hoàng Phạm Duy Tân</div>
+    <div class="message-card" onclick="showMessage('Trịnh Thị Kim Thanh', '   Thanh xuân học trò là cả một bầu trời ước mơ. Có đứa muốn làm bác sĩ, có đứa mơ làm nhà văn, có đứa chỉ muốn học giỏi để cha mẹ vui lòng. Mỗi người một hướng đi, một khát vọng riêng. Dù ước mơ ấy sau này có thay đổi, thì chính thời cấp 3 đã khơi dậy cho ta tinh thần dám mơ ước, dám vượt qua bản thân. Ta từng ngồi vẽ sơ đồ tương lai, viết nhật ký đầy hy vọng, hay đơn giản là nhìn lên bảng điểm và hứa sẽ cố gắng hơn nữa. Thanh xuân không phải lúc nào cũng thành công, nhưng nó chính là nơi những ước mơ đầu tiên bắt đầu, và theo ta đến mãi về sau.')">Trịnh Thị Kim Thanh</div>
+    <div class="message-card" onclick="showMessage('Bùi Phương Thảo', 'Tuổi học trò có những “bí mật” nhỏ giấu trong ngăn bàn. Đó có thể là một lá thư chưa kịp gửi, một bức ảnh chụp cả lớp, hay đơn giản là mảnh giấy nhắn vội của người bạn ngồi cạnh. Những điều tưởng chừng bé xíu ấy lại chứa cả một vùng trời kỷ niệm. Ta từng lén lút đọc thư, giấu bài kiểm tra kém, hay bí mật trao nhau những dòng động viên trước kỳ thi. Những chiếc ngăn bàn cũ kỹ giờ đây đã bị thay thế, nhưng cảm xúc mà nó lưu giữ thì vẫn còn nguyên. Thanh xuân là thế - dung dị, vụn vặt, nhưng lại khiến ta mãi không thể quên.')">Bùi Phương Thảo</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Võ Hồng Thi', ' Có một loại cảm xúc mang tên “chờ tan học” - đặc biệt chỉ có ở tuổi học trò. Đó là khi tiếng trống vang lên cuối buổi, cả lớp ào ra như ong vỡ tổ. Người thì vội vã về nhà, người nán lại nói chuyện, người rủ nhau ra quán trước cổng trường. Đôi khi chỉ là đứng đợi ai đó đi cùng một đoạn về. Tan học là lúc trường học ồn ào nhất, rộn ràng nhất và cũng ấm áp nhất. Nó không chỉ đánh dấu kết thúc một ngày học, mà còn mở ra những khoảnh khắc tự do, thân thương. Sau này, khi đi làm, ta sẽ chẳng còn được nghe tiếng trống ấy nữa - tiếng trống của tự do, của tuổi trẻ.')">Nguyễn Võ Hồng Thi</div>
+    <div class="message-card" onclick="showMessage('Lê Ngọc Quỳnh Thư', 'Có những ngày đi học chỉ để gặp một người. Chẳng cần nói nhiều, chỉ cần thấy họ cười là đủ làm ta vui cả buổi. Cảm xúc đó, ngây ngô mà chân thành, là đặc sản của tuổi học trò. Chúng ta từng viết thư tay, từng lén nhìn từ phía sau lớp, từng đỏ mặt khi vô tình chạm tay nhau. Tình yêu tuổi học trò không ồn ào, không vội vàng, chỉ đơn giản là thích một người và mong người ấy luôn hạnh phúc. Dù chẳng đi đến đâu, dù sau này có quên tên nhau, nhưng thứ cảm xúc ấy sẽ luôn sống mãi trong tim - như đóa hoa đầu đời nở trong vườn ký ức.')">Lê Ngọc Quỳnh Thư</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Hà Minh Thư', ' Cấp 3 là quãng thời gian ta học cách sống thật với chính mình. Không còn là những đứa trẻ ngây ngô như tiểu học, nhưng cũng chưa đủ bản lĩnh như người lớn. Ta bắt đầu có suy nghĩ riêng, có chính kiến và dám bảo vệ quan điểm của mình. Có lúc bồng bột, có lúc sai lầm, nhưng ta đã trưởng thành qua từng bài học, từng va vấp nhỏ. Những năm ấy, ta đã dần hiểu được thế nào là tự lập, là trách nhiệm, là ước mơ. Dù chặng đường ấy không dễ đi, nhưng chính nó đã làm nên con người ta hôm nay - mạnh mẽ, dũng cảm và biết trân trọng chính mình.')">Nguyễn Hà Minh Thư</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Thị Anh Thư', '  Những ngày mưa đến lớp mang theo một nỗi buồn man mác. Tiếng mưa rơi trên mái tôn, bàn tay lạnh giá cầm bút viết vội. Có hôm ướt sũng áo mưa, vẫn cười đùa bên nhau dưới mái hiên trường. Mưa gắn với những lần trốn học, những chiều ngồi bó gối bên cửa sổ lớp nhìn trời xám xịt. Mưa khiến không khí lớp học trở nên lặng lẽ hơn, nhưng cũng khiến tâm hồn thêm sâu lắng. Tuổi học trò không chỉ có nắng vàng mà còn có những cơn mưa - dịu dàng, dai dẳng, và đầy cảm xúc như chính trái tim non trẻ đang lớn dần lên.'   )">Nguyễn Thị Anh Thư</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Song Bích Thy', '  Buổi ngoại khóa là khoảnh khắc bứt khỏi nhịp học đều đặn để sống hết mình. Những chuyến dã ngoại, cắm trại, những đêm đốt lửa trại, chơi trò chơi lớn… đều trở thành hồi ức đáng nhớ. Có bạn lần đầu nấu ăn tập thể, lần đầu ngủ lều, lần đầu đứng hát giữa đám đông. Ngoại khóa không chỉ giúp ta thư giãn mà còn dạy ta làm việc nhóm, gắn kết với nhau hơn. Tiếng cười vang trong rừng, trong sân trường, trong những buổi chiều rộn ràng - chính là âm thanh của thanh xuân rực rỡ. Ai đã từng sống trọn trong những ngày ấy sẽ chẳng thể quên được')">Nguyễn Song Bích Thy</div>
+    <div class="message-card" onclick="showMessage('Phạm Thanh Tuyết Thy', '  Có một cảm giác khó tả vào những ngày mưa nơi sân trường. Cơn mưa bất chợt làm ướt đôi vai áo trắng, làm ta phải núp dưới mái hiên cùng lũ bạn, cùng cười khúc khích. Mưa khiến mọi thứ như chậm lại - bài giảng trở nên dịu hơn, tiếng giảng bài vang lên trong nền nhạc mưa rơi thật lạ. Có đứa lặng im ngắm mưa, có đứa lén vẽ lên kính cửa sổ những hình thù ngộ nghĩnh. Mưa học trò không lạnh, chỉ gợi nên chút gì đó bâng khuâng, man mác. Sau này, mỗi lần trời mưa, ta lại thấy lòng mình se lại - vì nhớ một thời áo trắng, nhớ những cơn mưa tuổi học trò.')">Phạm Thanh Tuyết Thy</div>
+    <div class="message-card" onclick="showMessage('Tạ Thủy Tiên', '  Thanh xuân học trò cũng có những nỗi cô đơn thật đẹp. Đó là khi một mình ngồi ở hành lang, nghe bản nhạc yêu thích, hay ngắm hoàng hôn phủ vàng sân trường. Là cảm giác ngẩn ngơ khi bạn thân có nhóm chơi riêng, hay khi người mình thích chẳng để ý đến mình. Nhưng chính những khoảnh khắc cô đơn ấy lại giúp ta hiểu mình hơn, học cách mạnh mẽ, học cách yêu thương bản thân. Tuổi học trò đâu chỉ có tiếng cười, mà còn có nước mắt, có nỗi buồn - và nhờ vậy, nó mới thật, mới quý giá, mới làm nên một thanh xuân trọn vẹn.')">Tạ Thủy Tiên</div>
+    <div class="message-card" onclick="showMessage('Đỗ Văn Đức Tình', '    Có một điều khiến người ta day dứt mãi - đó là những lời chưa kịp nói trong năm cuối cấp. Là lời xin lỗi vì một lần vô tâm, là lời cảm ơn chưa dám thốt ra, hay lời tỏ tình còn dang dở. Cấp 3 kết thúc quá nhanh, khiến ta chưa kịp làm hết những điều mình muốn. Rồi mỗi lần nhìn lại, lại tiếc nuối: “Giá như ngày ấy mình dũng cảm hơn.” Nhưng chính sự dang dở ấy lại làm thanh xuân trở nên trọn vẹn - bởi nếu điều gì cũng hoàn hảo, ta sẽ không có gì để khắc khoải, để nhớ nhung. Tuổi học trò là vậy - dẫu có bỏ lỡ, vẫn là ký ức đẹp nhất đời.')">Đỗ Văn Đức Tình</div>
+    <div class="message-card" onclick="showMessage('Lê Ngọc Yến Trang', '    Hành lang trường học là nơi chứa đầy tiếng bước chân thanh xuân. Đó là nơi ta chạy vội đến lớp khi trễ giờ, nơi đứng nói chuyện cùng bạn mỗi giờ ra chơi, nơi thầm nhìn ai đó đi ngang qua. Những bức tường trắng, những ô cửa sổ đầy nắng - tất cả đều là nhân chứng cho những năm tháng vô tư. Mỗi bước chân nơi hành lang ấy là một bước lớn lên, một chút trưởng thành. Đến khi xa rồi, ta sẽ nhớ tiếng giày vang lên trong buổi sáng vội vàng, nhớ những ánh mắt ngại ngùng trao nhau, nhớ cả khoảng không yên tĩnh mỗi khi tan trường. Một không gian giản dị, nhưng lại chứa cả bầu trời ký ức.')">Lê Ngọc Yến Trang</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Ngọc Quỳnh Trâm', ' Kỳ nghỉ hè cấp 3 không giống bất kỳ kỳ nghỉ nào khác. Đó là khoảng thời gian chuyển giao giữa sự hồn nhiên và trưởng thành. Có người tranh thủ học thêm, luyện thi; có người dành trọn cho những chuyến đi xa, những phút thư giãn bên gia đình. Hè là lúc ta tạm xa bạn bè, xa lớp học để nhìn lại một năm đã qua. Nhưng cũng là lúc nỗi nhớ thầy cô, bạn bè len lỏi vào từng khoảnh khắc. Kỳ nghỉ ấy chẳng dài, nhưng đủ để tiếp thêm năng lượng cho năm học mới. Và với học sinh cuối cấp, đó là mùa hè cuối cùng bên mái trường - mùa hè đầy tiếc nuối, nhưng cũng đầy hứa hẹn.')">Nguyễn Ngọc Quỳnh Trâm</div>
+    <div class="message-card" onclick="showMessage('Lâm Huyền Trân', '    Có một góc nhỏ trong trường mà ai cũng có kỷ niệm riêng - có thể là bồn cây, bậc cầu thang hay góc thư viện vắng. Nơi đó từng chứng kiến ta ngồi ôn bài, lặng lẽ khóc vì điểm kém, hay thì thầm những câu chuyện không dám nói lớn. Chúng ta không nhận ra mình đã gắn bó với những nơi ấy nhiều đến thế cho đến khi phải rời đi. Cái ghế cũ, cái quạt kêu to, cái cửa sổ gỉ sét… tất cả tưởng chừng vô tri lại trở nên đáng nhớ lạ thường. Bởi nơi chốn nào từng gắn với thanh xuân - nơi ấy đều trở thành một phần ký ức không thể phai.')">Lâm Huyền Trân</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Quang Tú', '   Có một thứ không thể thiếu trong đời học trò: nhật ký. Đó là nơi ta giấu những tâm sự không dám nói ra, những nỗi buồn thầm lặng, hay cả những niềm vui nhỏ nhoi. Những trang giấy ố vàng, nét chữ xiêu vẹo ấy từng là người bạn thân thiết. Mỗi dòng chữ đều là một phần của tâm hồn non trẻ đang lớn lên từng ngày. Có thể sau này đọc lại, ta sẽ bật cười vì sự ngây ngô của mình. Nhưng cũng sẽ thấy tự hào vì bản thân đã sống trọn vẹn. Nhật ký - không cần ai đọc, chỉ cần ta đã từng viết - đã từng cảm, đã từng là chính mình.')">Nguyễn Quang Tú</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Quang Tuấn', '  Sân trường sau giờ tan học luôn mang một vẻ đẹp rất riêng. Khi tiếng trống đã dứt, lớp học thưa dần, chỉ còn lại ánh nắng cuối ngày đổ dài trên lối đi. Những bước chân vội vã, những cuộc hẹn hò nho nhỏ, những chiếc xe đạp đợi nhau… tạo nên bức tranh nhẹ nhàng mà cảm động. Có hôm trời mưa, ta nán lại trú dưới mái hiên, nhìn giọt nước rơi xuống từng giọt. Có hôm ngồi lại lâu hơn chỉ để nói thêm đôi ba câu với người mình quý. Những buổi chiều ấy, lặng lẽ mà đong đầy - là điểm dừng ấm áp trước khi mỗi người trở về thế giới riêng.')">Nguyễn Quang Tuấn</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Thùy Minh Tuệ', ' Ngày lễ tốt nghiệp là cột mốc thiêng liêng của học trò cấp 3. Trong tà áo dài trắng tinh khôi, từng ánh mắt, nụ cười, cái ôm đều mang theo sự xúc động khó tả. Ta nhìn lại chặng đường đã đi qua, cảm ơn thầy cô, bạn bè, và cả chính mình vì đã cố gắng. Những chiếc mũ được tung lên trời như lời hứa: chúng ta sẽ bay cao, bay xa, dù có đi đâu cũng không quên nơi mình bắt đầu. Sau lễ tốt nghiệp, ai cũng lớn thêm một chút - đủ để rời đi, nhưng cũng đủ để nhớ mãi. Thanh xuân khép lại bằng giây phút đó - đẹp, rực rỡ và đầy tự hào.')">Nguyễn Thùy Minh Tuệ</div>
+    <div class="message-card" onclick="showMessage('Nguyễn Văn Tùng', 'Thanh xuân học trò có những điều nhỏ xíu mà rất đáng yêu. Là cái kẹo bạn để trong hộc bàn khi thấy ta buồn. Là bức hình lớp chụp dở khóc dở cười ai cũng nhắm mắt. Là tiếng gọi “Ê đi ăn căng-tin không?” vang lên mỗi giờ ra chơi. Những điều tưởng như vụn vặt ấy, khi cộng lại, lại trở thành ký ức ấm áp nhất. Bởi chính những điều nhỏ bé ấy làm nên sự đặc biệt của thời cấp 3 - một quãng đời không cần hoàn hảo, chỉ cần đủ chân thành. Để sau này, mỗi khi nhớ lại, ta lại mỉm cười: Hồi ấy mình đã từng vui như thế./')">Nguyễn Văn Tùng</div>
+    <div class="message-card" onclick="showMessage('Trần Chí Tùng', 'Chiếc bàn học từng là “chiến hữu” suốt những năm tháng cấp 3. Trên đó là sách vở, giấy kiểm tra, bảng điểm, và cả những dòng chữ khắc tên ai đó thật nhỏ. Bàn có thể tróc sơn, in dấu mực lem, nhưng lại lưu giữ bao kỷ niệm. Là nơi ta đặt bút viết bài thi quan trọng, là nơi ta gục đầu ngủ trưa, là nơi ta khắc tuổi tên khi trái tim bắt đầu biết rung động. Sau này, chiếc bàn ấy sẽ được thay bằng bàn làm việc, bàn họp… nhưng chẳng cái nào thay thế được cảm giác thân quen của bàn học ngày xưa - nơi thanh xuân đã từng ngồi lại.')">Trần Chí Tùng</div>
+    <div class="message-card" onclick="showMessage('Trần Lê Khánh Vân', ' Tiếng trống trường là âm thanh đặc biệt của tuổi học trò. Mỗi tiếng trống vang lên không chỉ báo hiệu bắt đầu hay kết thúc tiết học, mà còn là nhịp tim của cả một thời thanh xuân. Ta từng hồi hộp chờ tiếng trống để thoát khỏi tiết kiểm tra, từng mong mãi chưa vang lên để được ở lại bên người thương thêm chút nữa. Tiếng trống ấy tưởng đơn giản, nhưng lại theo ta mãi về sau, trở thành âm thanh hoài niệm gợi nhớ bao khoảnh khắc cũ. Một ngày nào đó, giữa phố xá đông người, ta bỗng nghe một tiếng trống ngân, và bỗng thấy lòng mình xuyến xao lạ kỳ.')">Trần Lê Khánh Vân</div>
+    <div class="message-card" onclick="showMessage('Trần Thị Hải Vy', '   Buổi học cuối cùng luôn mang cảm giác kỳ lạ: vừa nhẹ nhõm, vừa lưu luyến. Cả lớp như nhận ra thời gian không còn nhiều, ai cũng cố gắng giữ cho nhau những điều đẹp nhất. Có tiếng cười vang, nhưng mắt ai cũng rưng rưng. Thầy cô giảng bài chậm hơn, dặn dò nhiều hơn. Những trang vở cuối khép lại mang theo bao cảm xúc đan xen. Đó không chỉ là tiết học, mà là lần cuối cùng được là học sinh của nhau. Sau này mỗi người một nơi, nhưng buổi học cuối ấy - với ánh nắng, tiếng ve, ánh mắt bùi ngùi - sẽ là ký ức đẹp nhất đời.')">Trần Thị Hải Vy</div>
+    <div class="message-card" onclick="showMessage('Phạm Hải Yến', 'Có một kiểu bạn học đáng nhớ trong đời: đó là người luôn làm trò, chọc cười cả lớp. Họ khiến những tiết học khô khan trở nên rộn ràng, khiến cả lớp đoàn kết qua những tràng cười không dứt. Đôi khi cũng vì nghịch quá mà bị thầy cô la, nhưng rồi chẳng ai trách họ được lâu. Những người bạn “tấu hài học đường” ấy mang đến một phần màu sắc rất riêng cho thanh xuân ta - một phần khiến ta nhớ mãi, vì đã giúp quãng đời học sinh thêm trọn vẹn, vui vẻ và bớt áp lực. Không có họ, cấp 3 sẽ buồn biết mấy.')">Phạm Hải Yến</div>
   </section>
 
   <section id="write-message">
@@ -1109,9 +1804,9 @@
 
   <div class="modal" id="message-modal">
     <div class="modal-content">
-      <h3 id="modal-name">Tên thành viên</h3>
-      <p id="modal-message">Nội dung lời nhắn mẫu</p>
-      <button type="button" onclick="closeModal()">Đóng</button>
+      <h3 id="modal-name"></h3>
+    <p id="modal-message"></p>
+      <button type="button" onclick="closeMessageModal()">Đóng</button>
     </div>
   </div>
 
@@ -1125,6 +1820,7 @@
       <p id="video-modal-description">Mô tả video</p>
       <button type="button" onclick="closeVideoModal()">Đóng</button>
     </div>
+    </div>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
@@ -1134,92 +1830,87 @@
   <script src="script.js"></script>
   <!-- Firebase Modular SDK -->
   <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-    import { getDatabase, ref, push, onChildAdded, query, limitToLast } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js';
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+  import { getDatabase, ref, push, onChildAdded, query, limitToLast } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js';
 
-    document.addEventListener("DOMContentLoaded", () => {
-      let database;
-      try {
-        // Cấu hình Firebase
-        const firebaseConfig = {
-          apiKey: "AIzaSyDGl114VDUnvUtVdl7vNd35lHEgXQIdaKs",
-          authDomain: "tuquangmemmery.firebaseapp.com",
-          projectId: "tuquangmemmery",
-          databaseURL: "https://tuquangmemmery-default-rtdb.firebaseio.com/",
-          storageBucket: "tuquangmemmery.firebasestorage.app",
-          messagingSenderId: "280703846268",
-          appId: "1:280703846268:web:d4fc49d0750dcea82a46f9",
-          measurementId: "G-W04JHPDT9Z"
-        };
+  document.addEventListener("DOMContentLoaded", () => {
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyDGl114VDUnvUtVdl7vNd35lHEgXQIdaKs",
+      authDomain: "tuquangmemmery.firebaseapp.com",
+      projectId: "tuquangmemmery",
+      databaseURL: "https://tuquangmemmery-default-rtdb.firebaseio.com/",
+      storageBucket: "tuquangmemmery.appspot.com",
+      messagingSenderId: "280703846268",
+      appId: "1:280703846268:web:d4fc49d0750dcea82a46f9",
+      measurementId: "G-W04JHPDT9Z"
+    };
 
-        // Khởi tạo Firebase
-        const app = initializeApp(firebaseConfig);
-        database = getDatabase(app);
-        console.log("Firebase khởi tạo thành công:", database);
-      } catch (error) {
-        console.error("Lỗi khi khởi tạo Firebase:", error);
-        alert("Không thể kết nối Firebase: " + error.message);
+    // Initialize Firebase
+    let database;
+    try {
+      const app = initializeApp(firebaseConfig);
+      database = getDatabase(app);
+      console.log("Firebase initialized successfully");
+    } catch (error) {
+      console.error("Firebase initialization error:", error);
+      alert("Không thể kết nối Firebase: " + error.message);
+      return;
+    }
+
+    const submittedMessages = document.getElementById("submitted-messages");
+
+    // Submit message
+    window.submitMessage = async function() {
+      if (!database) {
+        alert("Không thể gửi tin nhắn do lỗi kết nối Firebase!");
         return;
       }
-
-      // Các phần tử DOM cần cho tâm thư
-      const submittedMessages = document.getElementById("submitted-messages");
-
-      // Gửi tâm thư
-      window.submitMessage = async function() {
-        if (!database) {
-          alert("Không thể gửi tin nhắn do lỗi kết nối Firebase!");
-          return;
+      const nameInput = document.getElementById("name");
+      const messageInput = document.getElementById("message");
+      const name = nameInput.value.trim();
+      const message = messageInput.value.trim();
+      if (name && message) {
+        const newMessage = {
+          name,
+          message,
+          timestamp: new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" })
+        };
+        try {
+          await push(ref(database, 'messages'), newMessage);
+          nameInput.value = "";
+          messageInput.value = "";
+          console.log("Tin nhắn đã được gửi!");
+        } catch (error) {
+          console.error("Lỗi khi gửi tin nhắn:", error);
+          alert("Không thể gửi tin nhắn do kết nối bị lỗi!");
         }
-
-        const nameInput = document.getElementById("name");
-        const messageInput = document.getElementById("message");
-        const name = nameInput.value.trim();
-        const message = messageInput.value.trim();
-
-        if (name && message) {
-          const newMessage = {
-            name,
-            message,
-            timestamp: new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" })
-          };
-          try {
-            await push(ref(database, 'messages'), newMessage);
-            nameInput.value = "";
-            messageInput.value = "";
-            console.log("Tin nhắn đã được gửi!");
-          } catch (error) {
-            console.error("Lỗi khi gửi tin nhắn:", error);
-            alert("Không thể gửi tin nhắn do lỗi kết nối!");
-          }
-        } else {
-          alert("Vui lòng nhập đầy đủ tên và lời nhắn!");
-        }
-      };
-
-      // Hiển thị tâm thư
-      function displayMessages() {
-        if (!database || !submittedMessages) return;
-
-        const maxMessages = 50;
-        onChildAdded(query(ref(database, 'messages'), limitToLast(maxMessages)), (snapshot) => {
-          const msg = snapshot.val();
-          const messageDiv = document.createElement("div");
-          messageDiv.classList.add("message-card");
-          messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
-          messageDiv.addEventListener("click", () => showMessage(msg.name, msg.message));
-          submittedMessages.insertBefore(messageDiv, submittedMessages.firstChild);
-          if (submittedMessages.children.length > maxMessages) {
-            submittedMessages.removeChild(submittedMessages.lastChild);
-          }
-        }, (error) => {
-          console.error("Lỗi khi lấy tin nhắn:", error);
-        });
+      } else {
+        alert("Xin vui lòng nhập đầy đủ tên và lời nhắn!");
       }
+    };
 
-      // Gọi hàm hiển thị tâm thư
-      displayMessages();
-    });
+    // Display messages
+    function displayMessages() {
+      if (!database || !submittedMessages) return;
+      const maxMessages = 50;
+      onChildAdded(query(ref(database, 'messages'), limitToLast(maxMessages)), (snapshot) => {
+        const msg = snapshot.val();
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message-card");
+        messageDiv.innerHTML = `<strong>${msg.name}</strong> (${msg.timestamp}): ${msg.message}`;
+        messageDiv.addEventListener("click", () => showMessage(msg.name, msg.message));
+        submittedMessages.insertBefore(messageDiv, submittedMessages.firstChild);
+        if (submittedMessages.children.length > maxMessages) {
+          submittedMessages.removeChild(submittedMessages.lastChild);
+        }
+      }, (error) => {
+        console.error("Lỗi khi lấy tin nhắn:", error);
+      });
+    }
+
+    displayMessages();
+  });
   </script>
 </body>
 </html>
