@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     heart.style.transform = "translate(-50%, -50%)";
     heart.style.color = "red";
     heart.style.fontSize = "20px";
-    heart.textContent = "";
+    heart.textContent = "❤";
     avatar.appendChild(heart);
     setTimeout(() => heart.remove(), 1000);
   }
@@ -213,6 +213,10 @@ document.addEventListener("DOMContentLoaded", () => {
     videoTitle.textContent = title || "Không có tiêu đề";
     videoDescription.textContent = description || "Không có mô tả";
     modal.style.display = "flex";
+    if (audio) {
+      audio.pause(); // Pause background music
+      audio.muted = true; // Mute to ensure it stays off
+    }
   };
 
   window.closeVideoModal = function() {
@@ -222,6 +226,12 @@ document.addEventListener("DOMContentLoaded", () => {
       videoPlayer.pause();
       videoPlayer.currentTime = 0;
       modal.style.display = "none";
+      if (audio) {
+        audio.muted = false; // Unmute
+        audio.play().catch(error => {
+          console.error("Failed to resume background music:", error);
+        }); // Attempt to resume
+      }
     }
   };
 
@@ -276,12 +286,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.playBackgroundMusic = function() {
     if (audio) {
       audio.muted = false;
-      audio.volume = 0.8; // Set volume to 80% (high but not max)
+      audio.volume = 0.8;
       audio.play().catch(error => {
         console.error("Auto-play blocked by browser:", error);
-        audio.muted = true; // Mute initially to bypass autoplay policy
+        audio.muted = true;
         document.body.addEventListener('click', () => {
-          audio.muted = false; // Unmute on first user interaction
+          audio.muted = false;
           audio.play().catch(err => console.error("Play after click failed:", err));
         }, { once: true });
       });
@@ -290,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Auto-play background music on load
   if (audio) {
-    audio.loop = true; // Ensure loop is active (already in HTML, but confirmed here)
-    playBackgroundMusic(); // Attempt auto-play on page load
+    audio.loop = true;
+    playBackgroundMusic();
   }
 });
