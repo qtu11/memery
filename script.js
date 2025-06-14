@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     heart.style.transform = "translate(-50%, -50%)";
     heart.style.color = "red";
     heart.style.fontSize = "20px";
-    heart.textContent = "❤";
+    heart.textContent = "";
     avatar.appendChild(heart);
     setTimeout(() => heart.remove(), 1000);
   }
