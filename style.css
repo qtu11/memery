@@ -289,7 +289,7 @@ section.active {
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 15px;
-  border: 5px solid #e89ad2;
+  border: 4px solid #fb7fcd;
   position: relative;
   transition: border-color 0.5s, transform 0.5s, box-shadow 0.5s;
   z-index: 2;
@@ -330,7 +330,7 @@ section.active {
 }
 
 .description {
-  font-size: 0.9em;
+  font-size: 1em;
   color: #666;
   line-height: 1.4;
   margin: 10px 0;
@@ -477,18 +477,23 @@ section.gallery-section {
 }
 
 /* Lời nhắn */
+#messages {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 3 cột trên máy tính */
+  gap: 20px; /* Khoảng cách giữa các message-card */
+  padding: 20px;
+}
+
 #messages .message-card {
   background-color: #FFE6F0;
   color: #FF99CC;
   padding: 15px;
-  margin: 10px auto;
-  max-width: 300px;
+  margin: 0; /* Loại bỏ margin để tránh chồng lấn với gap */
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 16px;
-  justify-content: center; /* Căn giữa ngang */
-  align-items: center;    /* Căn giữa dọc */
+  text-align: center; /* Căn giữa nội dung */
 }
 
 #messages .message-card:hover {
@@ -496,7 +501,12 @@ section.gallery-section {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-
+#message-h2{
+  color: #FF99CC;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center; /* Căn giữa tiêu đề */
+}
 /* Viết tâm thư */
 #write-message {
   display:  flex; 
@@ -673,6 +683,9 @@ section.gallery-section {
   #gallery .memory-img {
     height: 150px;
   }
+  #messages {
+    grid-template-columns: repeat(3,1fr); /* 1 cột trên điện thoại */
+  }
   #messages .message-card {
     max-width: 250px;
     font-size: 16px;
@@ -745,10 +758,12 @@ section.gallery-section {
     font-size: 14px;
     padding: 3px;
   }
+   #messages {
+    grid-template-columns: repeat(3,1f); /* 1 cột trên điện thoại */
+  }
   #messages .message-card {
-    max-width: 200px;
-    font-size: 14px;
-    padding: 10px;
+    max-width: 250px;
+    font-size: 16px;
   }
   #write-message form {
     padding: 10px;
@@ -805,4 +820,49 @@ section {
 }
 section.active {
     display: block; /* Chỉ hiển thị section có class .active */
+}
+@media (max-width: 550px) {
+  section {
+    padding: 60px 10px;
+  }
+  #home h1 {
+    font-size: 1.5em;
+  }
+  .member-grid,
+  #members {
+    grid-template-columns: repeat(2, 1fr); /* Thay đổi từ 1fr thành 2 cột */
+  }
+  .avatar-circle {
+    width: 60px;
+    height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fb7fcd;
+  position: relative;
+  transition: border-color 0.5s, transform 0.5s, box-shadow 0.5s;
+  z-index: 2;
+  max-width: 100%;
+}
+  .member-card,
+  #members div {
+    padding: 15px;
+  }
+  .member-card h3,
+  #members div h3 {
+    font-size: 1em;
+  }
+  .description {
+    font-size: 0.7em;
+  }
+  .match-button {
+    padding: 6px 12px;
+    font-size: 0.7em;
+  }
+   #messages {
+    grid-template-columns: repeat(3,1fr); /* 1 cột trên điện thoại */
+  }
+  #messages .message-card {
+    max-width: 250px;
+    font-size: 16px;
+  }
 }
