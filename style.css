@@ -14,7 +14,7 @@ body {
 
 /* Thanh điều hướng */
 nav {
-  background-color: #e16acf9d;
+  background-color: #ff90c7;
   padding: 10px 0;
   position: relative;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -25,14 +25,15 @@ nav {
 .menu-toggle {
   display: none;
   font-size: 24px;
-  background: none;
+  background:#f976b8;
   border: none;
   cursor: pointer;
   padding: 5px 10px;
   position: absolute;
-  left: 10px;
-  top: 10px;
+  left: 35px;
+  top: 15px;
   color: #ffffff;
+
 }
 
 .nav-menu {
@@ -628,6 +629,7 @@ section.gallery-section {
     top: 50px;
     left: 0;
     width: 100%;
+    width:20px;
     background-color: #FF99CC;
     padding: 10px 0;
     z-index: 1000;
