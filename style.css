@@ -629,7 +629,8 @@ section.gallery-section {
     top: 50px;
     left: 0;
     width: 100%;
-    width:20px;
+    
+    align-items: center; 
     background-color: #FF99CC;
     padding: 10px 0;
     z-index: 1000;
