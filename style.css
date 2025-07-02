@@ -994,6 +994,7 @@ body {
   
   .members-grid,.video-grid,.photo-grid,.messages-grid,.submitted-messages{
     grid-template-columns: repeat(2, 1fr);
+    font-size: 0.4em;
   }
   
   .media-item video,
@@ -1115,6 +1116,7 @@ body {
   .photo-grid {
     gap: var(--space-sm);
     grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+    font-size: 0.4em;
   }
 }
 
