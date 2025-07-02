@@ -324,7 +324,7 @@ body {
 
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-xl);
   max-width: 600px;
   margin: 0 auto var(--space-3xl);
@@ -925,15 +925,15 @@ body {
   }
   
   .members-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
   }
   
   .video-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
   }
   
   .photo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
   }
 }
 
@@ -975,7 +975,7 @@ body {
   }
   
   .hero-stats {
-    grid-template-columns: 3fr;
+    grid-template-columns: repeat(1,3fr);
     gap: var(--space-md);
   }
   
@@ -992,9 +992,8 @@ body {
     grid-template-columns: 1fr;
   }
   
-  .video-grid,
-  .photo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  .members-grid,.video-grid,.photo-grid,.messages-grid,.submitted-messages{
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .media-item video,
@@ -1042,13 +1041,13 @@ body {
   }
   
   .members-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     gap: var(--space-md);
   }
   
   .video-grid,
   .photo-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     gap: var(--space-md);
   }
   
@@ -1075,6 +1074,47 @@ body {
   
   .stat-item p {
     font-size: 0.875rem;
+  }
+  .members-grid,.video-grid,.photo-grid,.messages-grid,.submitted-messages{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 250px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .music-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 0.875rem;
+  }
+  
+  .nav-brand h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-stats {
+    gap: var(--space-sm);
+  }
+  
+  .stat-item {
+    padding: var(--space-md);
+  }
+  
+  .members-grid,
+  .video-grid,
+  .photo-grid {
+    gap: var(--space-sm);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
   }
 }
 
@@ -1103,7 +1143,6 @@ body {
   
   .hero-stats {
     gap: var(--space-sm);
-grid-template-columns: repeat(3, 1fr); /* Thay đổi từ 1fr thành 2 cột */
   }
   
   .stat-item {
@@ -1114,84 +1153,11 @@ grid-template-columns: repeat(3, 1fr); /* Thay đổi từ 1fr thành 2 cột */
   .video-grid,
   .photo-grid {
     gap: var(--space-sm);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
   }
 }
 
-@media (max-width: 280px) {
-  section {
-    padding: 60px 10px;
-  }
-  #home h1 {
-    font-size: 1.5em;
-  }
-  .member-grid,
-  #members {
-    grid-template-columns: 1fr;
-  }
-  .avatar-circle {
-    width: 60px;
-    height: 60px;
-  }
-  .member-card,
-  #members div {
-    padding: 15px;
-  }
-  .member-card h3,
-  #members div h3 {
-    font-size: 1em;
-  }
-  .description {
-    font-size: 0.7em;
-  }
-  .match-button {
-    padding: 6px 12px;
-    font-size: 0.7em;
-  }
-  #gallery h2,
-  #messages h2,
-  #write-message h2 {
-    font-size: 1.5em;
-  }
-  #gallery h3 {
-    font-size: 1.2em;
-  }
-  #gallery .video-grid,
-  #gallery .memories-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  }
-  #gallery .gallery-item video,
-  #gallery .memory-img {
-    height: 120px;
-  }
-  #gallery .gallery-content,
-  #gallery .memory-content {
-    font-size: 14px;
-    padding: 3px;
-  }
-   #messages {
-    grid-template-columns: repeat(3,1f); /* 1 cột trên điện thoại */
-  }
-  #messages .message-card {
-    max-width: 250px;
-    font-size: 16px;
-  }
-  #write-message form {
-    padding: 10px;
-  }
-  #write-message input,
-  #write-message textarea {
-    font-size: 14px;
-    padding: 8px;
-  }
-  #write-message button {
-    font-size: 12px;
-    padding: 8px;
-  }
-  #submitted-messages div {
-    font-size: 14px;
-    padding: 10px;
-  }
-}
+
 
 /* Utility Classes */
 .text-center { text-align: center; }
